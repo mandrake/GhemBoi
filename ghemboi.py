@@ -1,6 +1,6 @@
 import json
 import os
-from z80 import *
+from z80gb import *
 
 class GhemBoi:
     d = []
@@ -50,7 +50,7 @@ class GhemBoi:
         self.info['gblcheck'] = _hw(25)
 
         print len(self.data)
-        Z80.decodeString(self.data[0x05c6:])
+        Z80.decodeStringFile(self.data[0x05c6:], 'disasm.asm', 0x05c6)
 
     def __str__(self):
         return str(self.info)

@@ -1,3 +1,6 @@
 *.gb
 *.gbc
 *.gba
+*.pyc
+z80.py
+opcodes/z80.json
