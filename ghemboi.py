@@ -12,7 +12,7 @@ class GhemBoi:
     def __init__(self, path):
 
         self.base = 0x0134
-        self.data = GhemBoi.d = open(path).read(2048*1024)
+        self.data = GhemBoi.d = open(path, 'rb').read()
 
         def _d(o, l):
             return GhemBoi.dataOffsetLength(self.base + o, l)
@@ -49,11 +49,11 @@ class GhemBoi:
         self.info['hdrcheck'] = _hb(24)
         self.info['gblcheck'] = _hw(25)
 
+        print len(self.data)
+        Z80.decodeString(self.data[0x05c6:])
+
     def __str__(self):
         return str(self.info)
 
-
 g = GhemBoi('Pokemon Argento (ITA).gb')
 print g
-
-Z80.decodeStream([0x7f, 0x78, 0x79, 0x79, 0x79,0xdd, 0x7e, 0x00, 0x01, 0x7d])

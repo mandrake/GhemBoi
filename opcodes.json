@@ -86,11 +86,37 @@
     "74": {"op": "ld", "operands": ["(hl)", "h"], "follows": []},
     "75": {"op": "ld", "operands": ["(hl)", "l"], "follows": []},
 
-    "DD77": {"op": "ld", "operands": ["(hl)", "a"], "follows": []},
-    "DD70": {"op": "ld", "operands": ["(hl)", "b"], "follows": []},
-    "DD71": {"op": "ld", "operands": ["(hl)", "c"], "follows": []},
-    "DD72": {"op": "ld", "operands": ["(hl)", "d"], "follows": []},
-    "DD73": {"op": "ld", "operands": ["(hl)", "e"], "follows": []},
-    "DD74": {"op": "ld", "operands": ["(hl)", "h"], "follows": []},
-    "DD75": {"op": "ld", "operands": ["(hl)", "l"], "follows": []}
+    "DD77": {"op": "ld", "operands": ["(ix+word)", "a"], "follows": ["word"]},
+    "DD70": {"op": "ld", "operands": ["(ix+word)", "b"], "follows": ["word"]},
+    "DD71": {"op": "ld", "operands": ["(ix+word)", "c"], "follows": ["word"]},
+    "DD72": {"op": "ld", "operands": ["(ix+word)", "d"], "follows": ["word"]},
+    "DD73": {"op": "ld", "operands": ["(ix+word)", "e"], "follows": ["word"]},
+    "DD74": {"op": "ld", "operands": ["(ix+word)", "h"], "follows": ["word"]},
+    "DD75": {"op": "ld", "operands": ["(ix+word)", "l"], "follows": ["word"]},
+    "DD76": {"op": "ld", "operands": ["(ix+word)", "byte"], "follows": ["word", "byte"]},
+
+    "FD77": {"op": "ld", "operands": ["(iy+word)", "a"], "follows": ["word"]},
+    "FD70": {"op": "ld", "operands": ["(iy+word)", "b"], "follows": ["word"]},
+    "FD71": {"op": "ld", "operands": ["(iy+word)", "c"], "follows": ["word"]},
+    "FD72": {"op": "ld", "operands": ["(iy+word)", "d"], "follows": ["word"]},
+    "FD73": {"op": "ld", "operands": ["(iy+word)", "e"], "follows": ["word"]},
+    "FD74": {"op": "ld", "operands": ["(iy+word)", "h"], "follows": ["word"]},
+    "FD75": {"op": "ld", "operands": ["(iy+word)", "l"], "follows": ["word"]},
+    "FD76": {"op": "ld", "operands": ["(iy+word)", "byte"], "follows": ["word", "byte"]},
+
+    "3E": {"op": "ld", "operands": ["a", "byte"], "follows": ["byte"]},
+    "06": {"op": "ld", "operands": ["b", "byte"], "follows": ["byte"]},
+    "0E": {"op": "ld", "operands": ["c", "byte"], "follows": ["byte"]},
+    "16": {"op": "ld", "operands": ["d", "byte"], "follows": ["byte"]},
+    "1E": {"op": "ld", "operands": ["e", "byte"], "follows": ["byte"]},
+    "26": {"op": "ld", "operands": ["h", "byte"], "follows": ["byte"]},
+    "2E": {"op": "ld", "operands": ["l", "byte"], "follows": ["byte"]},
+    "36": {"op": "ld", "operands": ["(hl)", "byte"], "follows": ["byte"]},
+
+    "DD36": {"op": "ld", "operands": ["(ix+word)", "byte"], "follows": ["word", "byte"]},
+    "FD36": {"op": "ld", "operands": ["(iy+word)", "byte"], "follows": ["word", "byte"]},
+
+    "02": {"op": "ld", "operands": ["(bc)", "a"], "follows": []},
+    "12": {"op": "ld", "operands": ["(de)", "a"], "follows": []},
+    "32": {"op": "ld", "operands": ["(word)", "a"], "follows": ["word"]}
 }

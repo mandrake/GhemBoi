@@ -6,7 +6,7 @@ class Z80:
     @staticmethod
     def decodeStream(data):
         idx = 0
-
+        f = open('disasm.asm', 'w')
         while idx < len(data):
             tidx = idx
             key = ""
@@ -17,6 +17,7 @@ class Z80:
                 tidx += 1
 
             if tidx == idx + 3:
+                f.write("unk\n")
                 idx += 1
             else:
                 instr = ops[key]['op']
@@ -36,6 +37,7 @@ class Z80:
                         tidx += 1
                 if invalid:
                     idx += 1
+                    f.write("unk\n")
                 else:
                     j = 0
                     for i in range(0, len(operands)):
@@ -45,8 +47,11 @@ class Z80:
                         if 'byte' in operands[i]:
                             operands[i] = operands[i].replace('word', params[j])
                             j += 1
-                    print instr,
-                    print operands
+                    #print instr,
+                    #print operands
+                    f.write(instr)
+                    f.write(str(operands))
+                    f.write('\n')
 
                     idx = tidx
 
@@ -60,8 +65,9 @@ class Z80:
         ret = []
         for c in string:
             ret.append(c)
+        print len(string)
         x = map(ord, ret)
-        return Z80.decodeStream(x)
+        Z80.decodeStream(x)
 
     @staticmethod
     def decodeStringPP(string):
