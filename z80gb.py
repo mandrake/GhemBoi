@@ -8,7 +8,47 @@ class Z80instruction:
 
     def __str__(self):
         #print self.instr, self.ops
-        return "%08X: %s %s" % (self.addr, self.instr, ', '.join(self.ops))
+        return "%08X: %s %s" % (self.addr, self.instr, ', '.join(map(str, self.ops)))
+
+class Immb:
+    def __init__(self, val):
+        self.val = val
+
+    def __int__(self):
+        return self.val
+
+    def __str__(self):
+        return "%02Xh" % self.val
+
+class Immw:
+    def __init__(self, val):
+        self.val = val
+
+    def __int__(self):
+        return self.val
+
+    def __str__(self):
+        return "%04Xh" % self.val
+
+class Indb:
+    def __init__(self, val):
+        self.val = val
+
+    def __int__(self):
+        return self.val
+
+    def __str__(self):
+        return "(%02Xh)" % self.val
+
+class Indw:
+    def __init__(self, val):
+        self.val = val
+
+    def __int__(self):
+        return self.val
+
+    def __str__(self):
+        return "(%04Xh)" % self.val
 
 class Z80:
     ops = json.load(open('opcodes/z80gb.json'))
@@ -17,61 +57,55 @@ class Z80:
     def decodeStream(data, base):
         ret = []
         idx = 0
-
+        base = int(base)
         while idx < len(data):
             tidx = idx
             key = ""
             ops = Z80.ops
             
-            while (not ops.has_key(key)) and tidx < idx + 3 and tidx < len(data):
+            while (not ops.has_key(key)) and tidx < idx + 2 and tidx < len(data):
                 key += "%02X" % data[tidx]
                 tidx += 1
 
-            if tidx == idx + 3 or (tidx == len(data) and not ops.has_key(key)):
-                ret.append(Z80instruction(base+idx, 'unk', ["0x%02X" % data[idx]]))
+            if tidx == idx + 2 or (tidx == len(data) and not ops.has_key(key)):
+                #print "Warning: this should never happen (%08X: %02Xh)" % (idx, data[idx])
+                ret.append(Z80instruction(base+idx, 'nop', ["%02Xh" % data[idx]]))
                 idx += 1
             else:
                 instr = ops[key]['op']
-                operands = ops[key]['operands']
+                operands = list(ops[key]['operands'])
                 params = []
-                invalid = False
                 
-                for follow in ops[key]['follows']:
-                    if follow == 'byte':
-                        params.append("0x%02X" % data[tidx])
-                        tidx += 1
-                    elif follow == 'word':
-                        params.append("0x%02X%02X" % (data[tidx+1], data[tidx]))
-                        tidx += 2
+                if ops[key].has_key('follows'):
+                    for follow in ops[key]['follows']:
+                        if follow == 'byte':
+                            params.append(data[tidx])
+                            tidx += 1
+                        elif follow == 'word':
+                            params.append(data[tidx] + data[tidx + 1] * 256)
+                            tidx += 2
+                        else:
+                            raise Exception("Fuuuuuuuu")
+                
+                j = 0
+                for i in range(0, len(operands)):
+                    if operands[i] == 'byte':
+                        operands[i] = Immb(params[j])
+                    elif operands[i] == 'word':
+                        operands[i] = Immw(params[j])
+                    elif operands[i] == '(byte)':
+                        operands[i] = Indb(params[j])
+                    elif operands[i] == '(word)':
+                        operands[i] = Indw(params[j])
                     else:
-                        if (follow != "%02X" % data[tidx]):
-                            invalid = True
-                        tidx += 1
-                
-                if not invalid:
-                    j = 0
-                    for i in range(0, len(operands)):
-                        if 'word' in operands[i]:
-                            operands[i] = operands[i].replace('word', params[j])
-                            j += 1
-                        if 'byte' in operands[i]:
-                            operands[i] = operands[i].replace('byte', params[j])
-                            j += 1
+                        j -= 1
+                    j += 1
 
-                    ret.append(Z80instruction(base+idx, instr, operands))
-                    found = True
-                    idx = tidx
-                else:
-                    idx += 1
-
+                ret.append(Z80instruction(base+idx, instr, operands))
+                found = True
+                idx = tidx
+            
         return ret
-
-
-    @staticmethod
-    def decodeStreamPP(data, base):
-        r = Z80.decodeStream(data, base)
-        for i in r:
-            print i
 
     @staticmethod
     def decodeStreamFile(data, path, base):
@@ -79,24 +113,3 @@ class Z80:
         r = Z80.decodeStream(data, base)
         for i in r:
             f.write(str(i) + "\n")
-
-    @staticmethod
-    def decodeString(string, base):
-        ret = []
-        for c in string:
-            ret.append(c)
-        return Z80.decodeStream(map(ord, ret), base)
-
-    @staticmethod
-    def decodeStringPP(string, base):
-        ret = []
-        for c in string:
-            ret.append(c)
-        return Z80.decodeStreamPP(map(ord, ret), base)
-
-    @staticmethod
-    def decodeStringFile(string, path, base):
-        ret = []
-        for c in string:
-            ret.append(c)
-        Z80.decodeStreamFile(map(ord, ret), path, base)
