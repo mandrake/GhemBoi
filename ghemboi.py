@@ -96,13 +96,25 @@ class GhemBoiHeader:
         return r
 
 class GhemBoi:
-    def __init__(self, path):
-        self.data = map(ord, open(path, 'rb').read())
+    offsets = {
+        'header':   slice(0x0100, 0x0150)
+    }
 
-        self.header = GhemBoiHeader(self.data[0x0100:0x0150])
+    memory_map = {}
+
+    def chunk(self, name):
+        return self.data[self.offsets[name]]
+
+    def __init__(self, path):
+        #self.data = map(ord, open(path, 'rb').read())
+        f = open(path, 'rb')
+
+        self.data = bytearray(f.read())
+        self.header = GhemBoiHeader(self.chunk('header'))
 
         print str(self.header)
         print "%04Xh" % self.header.entry
-        Z80.decodeStreamFile(self.data[int(self.header.entry):], 'disasm.asm', self.header.entry)
+        z = Z80sym(self.data)
+    #    Z80.decodeStreamFile(self.data[int(self.header.entry):], 'disasm.asm', self.header.entry)
 
 g = GhemBoi('Pokemon Argento (ITA).gb')
