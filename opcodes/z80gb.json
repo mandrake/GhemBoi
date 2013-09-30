@@ -124,7 +124,7 @@
     "73": {"op": "ld", "operands": ["(hl)", "e"]},
     "74": {"op": "ld", "operands": ["(hl)", "h"]},
     "75": {"op": "ld", "operands": ["(hl)", "l"]},
-    "76": {"op": "ld", "operands": ["(hl)", "(hl)"]},
+    "76": {"op": "halt", "operands": []},
     "77": {"op": "ld", "operands": ["(hl)", "a"]},
     "78": {"op": "ld", "operands": ["a", "b"]},
     "79": {"op": "ld", "operands": ["a", "c"]},
@@ -233,7 +233,7 @@
     "DE": {"op": "sbc", "operands": ["a", "byte"], "follows": ["byte"]},
     "DF": {"op": "rst", "operands": ["18"]},
 
-    "E0": {"op": "ldh", "operands": ["(byte)", "a"], "follows": ["byte"]},
+    "E0": {"op": "ldh", "operands": ["(byte + 0xff00)", "a"], "follows": ["byte"]},
     "E1": {"op": "pop", "operands": ["hl"]},
     "E2": {"op": "ldh", "operands": ["(c)", "a"]},
     "E5": {"op": "push", "operands": ["hl"]},

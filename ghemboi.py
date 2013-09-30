@@ -80,7 +80,7 @@ class GhemBoiHeader:
         self.info['old_licensee'] = p.b()
         self.info['mask_rom_version'] = p.b()
         self.info['compl_checksum'] = p.b()
-        self.info['checksum'] = p.w(end=Endianness.Big)
+        self.info['checksum'] = p.w(end = Endianness.Big)
 
         self.entry = intrl[1].ops[0]
 
