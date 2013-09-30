@@ -197,7 +197,8 @@ class Z80sym(object):
                 self.set_flag('carry')
         elif b == 0x18:         # JR d8
             #self.jumprel(self.signedb(self.read_inc_pc()))
-            self.PC += self.read_inc_pc()
+            op = self.read_inc_pc()
+            self.PC += op
         elif b == 0x19:         # ADD HL, DE
             self.reset_flag('subtraction')
             if self.E == 0xff - self.L + 1:
