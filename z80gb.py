@@ -2,21 +2,21 @@ import json
 import struct
 
 import gtk
+import mbc
 
-w = gtk.Window()
-w.set_default_size(200, 200)
-w.connect('destroy', gtk.main_quit)
+#w = gtk.Window()
+#w.set_default_size(200, 200)
+#w.connect('destroy', gtk.main_quit)
 
-w.show()
+#w.show()
 
 class Z80sym(object):
     x = open('opcodes/z80gb.json')
-    def __init__(self, cartridge, memsize = 0x10000):
+    def __init__(self, mbc):
         super(Z80sym, self).__setattr__('bind', super(Z80sym, self).__setattr__)
         self.bind('ops', json.load(self.x))
         self.x.close()
-        self.bind('cartridge', cartridge)
-        self.bind('memory', [0x00] * 0x10000)
+        self.bind('memory', mbc)
         self.bind('registers', {
             'A': 0x00,
             'B': 0x00,
@@ -26,11 +26,26 @@ class Z80sym(object):
             'F': 0x00,
             'H': 0x00,
             'L': 0x00,
-            'PC': 0x0100,
+            'PC': 0x0000,
             'SP': 0x0000,
             'I': 0x00,
             'R': 0x00
         })
+        """
+        self.bind('registers', {
+            'A': 0x01,
+            'B': 0x00,
+            'C': 0x13,
+            'D': 0x00,
+            'E': 0xd8,
+            'F': 0xb0,
+            'H': 0x01,
+            'L': 0x4d,
+            'PC': 0x0100,
+            'SP': 0xfffe,
+            'I': 0x00,
+            'R': 0x00
+        })"""
         self.bind('running', True)
         self.bind('flags', {
             'zero': 0x80,
@@ -38,17 +53,20 @@ class Z80sym(object):
             'half_carry': 0x20,
             'carry': 0x10
         })
-
-        self.memory[0x0000:0x4000] = cartridge[0x0000:0x4000]
-        
+    
+    def run(self):
         while self.running:
-            try:
+            if True:
                 o = 1
                 s = ''
-                
                 b = '%02X' % self.memory[self.PC]
-                s += self.ops[b]['op'] + ' '
                 l = []
+
+                if b == 'CB':
+                    self.PC += 1
+                    b += '%02X' % self.memory[self.PC]
+
+                s += self.ops[b]['op'] + ' '
                 for q in self.ops[b]['operands']:
                     if 'byte' in q:
                         l.append(q.replace('byte', '%02xh' % self.memory[self.PC + o]))
@@ -63,7 +81,8 @@ class Z80sym(object):
                 print '%20s (%s)\t' % (s, b),
                 print self.registers
                 self.decode()
-            except Exception as e:
+            #except Exception as e:
+            else:
                 #print self.memory
                 print self.registers
                 print e 
@@ -196,9 +215,9 @@ class Z80sym(object):
             if b0:
                 self.set_flag('carry')
         elif b == 0x18:         # JR d8
-            #self.jumprel(self.signedb(self.read_inc_pc()))
-            op = self.read_inc_pc()
-            self.PC += op
+            self.jumprel(self.signedb(self.read_inc_pc()))
+            #op = self.read_inc_pc()
+            #self.PC += op
         elif b == 0x19:         # ADD HL, DE
             self.reset_flag('subtraction')
             if self.E == 0xff - self.L + 1:
@@ -226,8 +245,8 @@ class Z80sym(object):
             if b0:
                 self.set_flag('carry')
         elif b == 0x20:         # JR NZ, r8
-            #op = self.signedb(self.read_inc_pc())
-            op = self.read_inc_pc()
+            op = self.signedb(self.read_inc_pc())
+            #op = self.read_inc_pc()
             if not self.get_flag('zero'):
                 self.jumprel(op)
                 print self.registers['PC']
@@ -256,8 +275,8 @@ class Z80sym(object):
                 self.set_flag('zero')
             self.reset_flag('half_carry')
         elif b == 0x28:         # JR Z, r8
-            #op = self.signedb(self.read_inc_pc())
-            op = self.read_inc_pc()
+            op = self.signedb(self.read_inc_pc())
+            #op = self.read_inc_pc()
             if self.get_flag('zero'):
                 self.jumprel(op)
         elif b == 0x29:         # ADD HL, HL
@@ -284,8 +303,8 @@ class Z80sym(object):
             self.set_flag('half_carry')
             self.A = 0xff - self.A
         elif b == 0x30:         # JR NC, d8
-            #op = self.signedb(self.read_inc_pc())
-            op = self.read_inc_pc()
+            op = self.signedb(self.read_inc_pc())
+            #op = self.read_inc_pc()
             if not self.get_flag('carry'):
                 self.jumprel(op)
         elif b == 0x31:         # LD SP, d16
@@ -321,8 +340,8 @@ class Z80sym(object):
             self.reset_flags('half_carry', 'subtraction')
             self.set_flag('carry')
         elif b == 0x38:         # JR C, d8
-            #op = self.signedb(self.read_inc_pc())
-            op = self.read_inc_pc()
+            op = self.signedb(self.read_inc_pc())
+            #op = self.read_inc_pc()
             if self.get_flag('carry'):
                 self.jumprel(op)
         elif b == 0x39:         # ADD HL, SP
@@ -671,7 +690,9 @@ class Z80sym(object):
             if not self.get_flag('zero'):
                 self.jumpabs(op)
         elif b == 0xcb:         # TODO: bit operations
-            pass
+            b *= 256
+            b += self.read_inc_pc()
+            self.bit_operation(b)
         elif b == 0xcc:         # CALL Z, a16
             op = self.read_inc_pc(2)
             if self.get_flag('zero'):
@@ -741,8 +762,8 @@ class Z80sym(object):
             self.push(self.PC)
             self.PC = 0x0020
         elif b == 0xe8:         # ADD SP, r8
-            #o = self.signedb(self.read_inc_pc())
-            o = self.read_inc_pc()
+            o = self.signedb(self.read_inc_pc())
+            #o = self.read_inc_pc()
             self.reset_flags('zero', 'subtraction', 'half_carry', 'carry')
             if self.SP & 0x000f + o & 0x0f > 0x0f:
                 self.set_flag('half_carry')
@@ -758,8 +779,6 @@ class Z80sym(object):
         elif b == 0xea:         # LD (a16), A
             op = self.read_inc_pc(2)
             self.memory[op] = self.A
-            if op >= 0x2000 and op < 0x4000:
-                self.memory[0x4000:0x8000] = self.cartridge[self.A * 0x4000 + 0x0000:self.A * 0x4000 + 0x4000]
         elif b == 0xee:         # XOR d8
             self.xor(self.read_inc_pc())
         elif b == 0xef:         # RST 28h
@@ -807,19 +826,182 @@ class Z80sym(object):
             print self.registers
             self.running = False
 
+    def bitoperation(self, val):
+        b2 = val & 0xff
+        ops = ['B', 'C', 'D', 'E', 'H', 'L', '(HL)', 'A']
+        if b2 >= 0x00 and b2 <= 0x07:               # RLC op
+            self.rl(ops[b2], carry = False)
+        elif b2 >= 0x08 and b2 <= 0x0f:             # RRC op
+            self.rr(ops[b2 - 0x08], carry = False)
+        elif b2 >= 0x10 and b2 <= 0x17:             # RL op
+            self.rl(ops[b2 - 0x10], carry = True)
+        elif b2 >= 0x18 and b2 <= 0x1f:             # RR op
+            self.rr(ops[b2 - 0x18], carry = True)
+        elif b2 >= 0x20 and b2 <= 0x27:             # SLA op
+            self.sl(ops[b2 - 0x20])
+        elif b2 >= 0x28 and b2 <= 0x2f:             # SRA op
+            self.sr(ops[b2 - 0x28])
+        elif b2 >= 0x30 and b2 <= 0x37:             # SWAP op
+            self.swap(ops[b2 - 0x30])
+        elif b2 >= 0x38 and b2 <= 0x3f:             # SRL op
+            self.srl(ops[b2 - 0x38])
+        elif b2 >= 0x40 and b2 <= 0x7f:             # BIT n, op
+            op = ops[b2 & 0x08]
+            n  = (b2 - 0x40) >> 3
+            self.bit(op, 2 ** n)
+        elif b2 >= 0x80 and b2 <= 0xbf:             # RES n, op
+            op = ops[b2 & 0x08]
+            n  = (b2 - 0x80) >> 3
+            self.res(op, 255 - (2 ** n))
+        elif b2 >= 0xc0 and b2 <= 0xff:             # SET n, op
+            op = ops[b2 & 0x08]
+            n  = (b2 - 0xc0) >> 3
+            self.set(op, 2 ** n)
+
+    def bit(self, reg, mask):
+        self.reset_flags('half_carry', 'zero', 'subtraction')
+
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+
+        if v & mask:
+            self.set_flag('zero')
+
+    def set(self, reg, mask):
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+        v |= mask
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
+    def res(self, reg, mask):
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+        v &= mask
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
+    def swap(self, reg):
+        self.reset_flags('half_carry', 'carry', 'zero', 'subtraction')
+
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers
+        pass
+
+    def sl(self, reg):
+        self.reset_flags('half_carry', 'carry', 'zero', 'subtraction')
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+
+        v *= 2
+        if v >= 0x100:
+            self.set_flag('carry')
+        v &= 0xff
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
+        if v == 0x00:
+            self.set_flag('zero')
+
+    def sr(self, reg):
+        self.reset_flags('half_carry', 'carry', 'zero', 'subtraction')
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+
+        if v & 0x01 == 0x01:
+            self.set_flag('carry')
+        
+        v /= 2
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
+        if v == 0x00:
+            self.set_flag('zero')
+
+    def rl(self, reg, carry = False):
+        print 'rl (%s, %b)' %(reg, carry)
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+        
+        self.reset_flags('zero', 'half_carry', 'subtraction', 'carry')
+        b7 = v & 0x80
+        v &= 0x7f
+        v *= 2
+        if b7:
+            if carry:
+                v += 1
+            else:
+                v += self.get_flag('carry')
+            self.set_flag('carry')
+
+        if v == 0x00:
+            self.set_flag('zero')
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
+    def rr(self, reg, carry = False):
+        v = self.memory[self.HL]
+        if reg != '(HL)':
+            v = self.registers[reg]
+
+        self.reset_flags('zero', 'half_carry', 'subtraction', 'carry')
+        b0 = v & 0x01
+        v /= 2
+        if b0:
+            if not carry:
+                v |= 0x80
+            else:
+                v |= 0x80 * self.get_flag('carry')
+            self.set_flag('carry')
+        if v == 0x00:
+            self.set_flag('zero')
+
+        if reg == '(HL)':
+            self.memory[self.HL] = v
+        else:
+            self.registers[reg] = v
+
     def reset_flags(self, *flags):
+        #print 'resetflags ' + str(flags)
         for flag in flags:
             self.reset_flag(flag)
 
     def reset_flag(self, name):
-        self.registers['F'] = self.registers['F'] | (255 - self.flags[name])
+        #print 'resetflag ' + name
+        #print '%02x & %02x = ' % (self.F, (255-self.flags[name])), 
+        self.F &= (255 - self.flags[name])
+        #print '%02x' % self.F
 
     def set_flags(self, *flags):
         for flag in flags:
             self.set_flag(flag)
 
     def set_flag(self, name):
-        self.registers['F'] = self.registers['F'] | self.flags[name]
+        #print 'setflag ' + name
+        #print self.F, self.flags[name]
+        self.F |= self.flags[name]
 
     def get_flag(self, name):
         return (self.registers['F'] & self.flags[name]) != 0
@@ -866,19 +1048,9 @@ class Z80sym(object):
             self.set_flag('zero')
 
     def cp(self, r):
-        self.set_flag('subtraction')
-        o = r
-        if r in ['A', 'B', 'C', 'D', 'E', 'H', 'L']:
-            o = self.registers[r]
-        
-        if self.A & 0x0f + o & 0x0f > 0x0f:
-            self.set_flag('half_carry')
-        s = self.A + o
-        if s > 0xff: 
-            self.set_flag('carry')
-            s -= 0x100
-        if s == 0x00:
-            self.set_flag('zero')
+        t = self.A
+        self.sub(r)
+        self.A = t
 
     def sub(self, r, carry = False):
         if r in ['A', 'B', 'C', 'D', 'E', 'H', 'L']:
@@ -894,10 +1066,11 @@ class Z80sym(object):
         if self.A & 0x0f + o & 0x0f > 0x0f:
             self.set_flag('half_carry')
 
-        self.A += o
-        if self.A > 0xff:
+        self.A -= o
+        if self.A < 0:
             self.set_flag('carry')
-            self.A -= 0x100
+            self.A += 0x100
+
         if self.A == 0x00:
             self.set_flag('zero')
 
