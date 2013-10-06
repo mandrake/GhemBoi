@@ -31,21 +31,6 @@ class Z80sym(object):
             'I': 0x00,
             'R': 0x00
         })
-        """
-        self.bind('registers', {
-            'A': 0x01,
-            'B': 0x00,
-            'C': 0x13,
-            'D': 0x00,
-            'E': 0xd8,
-            'F': 0xb0,
-            'H': 0x01,
-            'L': 0x4d,
-            'PC': 0x0100,
-            'SP': 0xfffe,
-            'I': 0x00,
-            'R': 0x00
-        })"""
         self.bind('running', True)
         self.bind('flags', {
             'zero': 0x80,
@@ -65,6 +50,7 @@ class Z80sym(object):
                 if b == 'CB':
                     self.PC += 1
                     b += '%02X' % self.memory[self.PC]
+                    self.PC -= 1
 
                 s += self.ops[b]['op'] + ' '
                 for q in self.ops[b]['operands']:
@@ -210,6 +196,7 @@ class Z80sym(object):
             self.reset_flags('zero', 'half_carry', 'subtraction', 'carry')
             b0 = self.A & 0x80
             self.A *= 2
+            self.A &= 0xff
             if self.get_flag('carry'):
                 self.A += 1
             if b0:
@@ -253,7 +240,7 @@ class Z80sym(object):
         elif b == 0x21:         # LD HL, d16
             self.HL = self.read_inc_pc(2)
         elif b == 0x22:         # LD (HL+), A
-            self.HL = self.A
+            self.memory[self.HL] = self.A
             self.inc('HL')
         elif b == 0x23:         # INC HL
             self.inc('HL')
@@ -826,7 +813,7 @@ class Z80sym(object):
             print self.registers
             self.running = False
 
-    def bitoperation(self, val):
+    def bit_operation(self, val):
         b2 = val & 0xff
         ops = ['B', 'C', 'D', 'E', 'H', 'L', '(HL)', 'A']
         if b2 >= 0x00 and b2 <= 0x07:               # RLC op
@@ -846,15 +833,15 @@ class Z80sym(object):
         elif b2 >= 0x38 and b2 <= 0x3f:             # SRL op
             self.srl(ops[b2 - 0x38])
         elif b2 >= 0x40 and b2 <= 0x7f:             # BIT n, op
-            op = ops[b2 & 0x08]
+            op = ops[b2 & 0x07]
             n  = (b2 - 0x40) >> 3
             self.bit(op, 2 ** n)
         elif b2 >= 0x80 and b2 <= 0xbf:             # RES n, op
-            op = ops[b2 & 0x08]
+            op = ops[b2 & 0x07]
             n  = (b2 - 0x80) >> 3
             self.res(op, 255 - (2 ** n))
         elif b2 >= 0xc0 and b2 <= 0xff:             # SET n, op
-            op = ops[b2 & 0x08]
+            op = ops[b2 & 0x07]
             n  = (b2 - 0xc0) >> 3
             self.set(op, 2 ** n)
 
@@ -937,7 +924,7 @@ class Z80sym(object):
             self.set_flag('zero')
 
     def rl(self, reg, carry = False):
-        print 'rl (%s, %b)' %(reg, carry)
+        print 'rl (%s, %d)' % (reg, carry)
         v = self.memory[self.HL]
         if reg != '(HL)':
             v = self.registers[reg]
