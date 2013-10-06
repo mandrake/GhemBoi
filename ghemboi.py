@@ -1,6 +1,7 @@
 from cartridge import *
 from mbc import *
 from z80gb import *
+from display import *
 
 """
 class GhemBoi:
@@ -44,6 +45,9 @@ f.close()
 for m in mbc_dict.keys():
     if m in cartridge_features:
         mbc = mbc_dict[m](c, rom)
+
+d = Display(mbc)
+d.start()
 
 z = z80gb.Z80sym(mbc)
 z.run()

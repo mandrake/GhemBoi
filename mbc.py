@@ -136,9 +136,6 @@ class MemoryBlockController3(object):
             'D': 0x0000
         }
 
-        # Initialization due to the change of the status by the ROM, which is not given
-        self.memory[0xff40] = 0x91
-
     def update_rom_bank(self):
         v = self.rom_bank_no
         if v == 0x00:
