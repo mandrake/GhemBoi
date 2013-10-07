@@ -32,9 +32,33 @@
             }
 
             #body {
-                padding: 25px;
+                padding: 35px;
             }
 
+            code {
+                border: 1px dotted #ccc;
+            }
+
+            pre {
+                padding: 0;
+                margin: 0;
+            }
+
+            .title {
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+            }
+
+            .bigtitle {
+                margin: 0;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                padding: 0;
+                padding-bottom: 10px;
+                font-size: 40px;
+                border-bottom: 1px solid #ddd;
+            }
         </style>
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
         <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
@@ -54,12 +78,14 @@
                 Size (bytes): {{instr_size}}<br/>
                 Clock cycles: {{instr_cycles}}
                 <div id="syntax">
-                    <h1>Syntax</h1>
+                    <div class="bigtitle">Syntax</div>
                     {{syntax}}
                 </div>
-                <h1>Code snippets</h1>
+                <div class="bigtitle">Code snippets</div>
                 <div id="code-C" class="c">
-                    <h1>C snippet</h1>
+                    <div class="title">
+                        C
+                    </div>
                     <pre>
                         <code>
     if (opcode == 0x00) ;
@@ -67,7 +93,9 @@
                     </pre>
                 </div>
                 <div id="code-PY">
-                    <h1>python snippet</h1>
+                    <div class="title">
+                        python
+                    </div>
                     <pre>
                         <code class="python">
     if opcode == 0x00:
