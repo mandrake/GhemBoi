@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            #opcodes-table,
+            #opcodes-table tr,
+            #opcodes-table td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            #opcodes-table td {
+                font-family: monospace;
+                width: 80px;
+                height: 60px;
+                text-align: center;
+            }
+
+            #content {
+                max-width: 900px;
+                margin: auto;
+                box-shadow: 0px 0px 15px #888888;
+            }
+
+            #header {
+                height: 120px;
+                background: #dde;
+                line-height: 120px;
+                font-size: 40px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            #body {
+                padding: 25px;
+            }
+
+        </style>
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+        <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+        <script>
+            hljs.tabReplace = '    ';
+            hljs.initHighlightingOnLoad();
+        </script>
+
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                GhemBoi documentation - opcode reference
+            </div>
+            <div id="body">
+                Instruction {{instr_code}}: {{instr_name}}<br/>
+                Size (bytes): {{instr_size}}<br/>
+                Clock cycles: {{instr_cycles}}
+                <div id="syntax">
+                    <h1>Syntax</h1>
+                    {{syntax}}
+                </div>
+                <h1>Code snippets</h1>
+                <div id="code-C" class="c">
+                    <h1>C snippet</h1>
+                    <pre>
+                        <code>
+    if (opcode == 0x00) ;
+                        </code>
+                    </pre>
+                </div>
+                <div id="code-PY">
+                    <h1>python snippet</h1>
+                    <pre>
+                        <code class="python">
+    if opcode == 0x00:
+        pass
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
