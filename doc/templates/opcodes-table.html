@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="opcodes">
+    <table id="opcodes-table">
+        <thead>
+            <tr>
+                <td></td>
+                {% for i in range(0, 16) %}
+                    <td>0x{{ prefix }}-{{ "%x" % i }}</td>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(0, 16) %}
+                <tr>
+                    <td>0x{{ prefix }}{{ "%x" % i }}-</td>
+                {% for j in range(0, 16) %}
+                    <td>
+                        0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }}
+                        {% set idx = "%X%X" % (i, j) %}
+                        <br/>
+                        {% if opcodes.has_key(idx) %}
+                            <a href="{{ opcodes[idx]['op']}}.html">
+                                {{ opcodes[idx]['op'] }} 
+                                {{ ', '.join(opcodes[idx]['operands']) }}
+                            </a>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}

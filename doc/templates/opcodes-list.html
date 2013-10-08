@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="opcodes">
+    <ul id="opcodes-list">
+    {% for i in range(0, 16) %}
+        {% for j in range(0, 16) %}
+            <li>
+                0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }} - 
+                {% set idx = "%X%X" % (i, j) %}
+                {% if opcodes.has_key(idx) %}
+                    <a href="{{ opcodes[idx]['op']}}.html">
+                        {{ opcodes[idx]['op'] }} 
+                        {{ ', '.join(opcodes[idx]['operands']) }}
+                    </a>
+                {% else %}
+                    -
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}

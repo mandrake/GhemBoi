@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            #opcodes-table,
+            #opcodes-table tr,
+            #opcodes-table td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            #opcodes-table td {
+                font-family: monospace;
+                width: 80px;
+                height: 60px;
+                text-align: center;
+            }
+
+            #opcodes-list li {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+            </div>
+            <div id="body">
+                
+<div id="opcodes">
+    <ul id="opcodes-list">
+    
+        
+            <li>
+                0x00 - 
+                
+                
+                    <a href="nop.html">
+                        nop 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x01 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        bc, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x02 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (bc), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x03 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        bc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x04 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x05 - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x06 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x07 - 
+                
+                
+                    <a href="rlc.html">
+                        rlc 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x08 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (word), sp
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x09 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        hl, bc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, (bc)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0b - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        bc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0c - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0d - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x0f - 
+                
+                
+                    <a href="rrc.html">
+                        rrc 
+                        a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x10 - 
+                
+                
+                    <a href="stop.html">
+                        stop 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x11 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        de, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x12 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (de), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x13 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        de
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x14 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x15 - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x16 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x17 - 
+                
+                
+                    <a href="rl.html">
+                        rl 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x18 - 
+                
+                
+                    <a href="jr.html">
+                        jr 
+                        byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x19 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        hl, de
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, (de)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1b - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        de
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1c - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1d - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x1f - 
+                
+                
+                    <a href="rr.html">
+                        rr 
+                        a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x20 - 
+                
+                
+                    <a href="jr.html">
+                        jr 
+                        nz, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x21 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        hl, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x22 - 
+                
+                
+                    <a href="ldi.html">
+                        ldi 
+                        (hl), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x23 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x24 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x25 - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x26 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x27 - 
+                
+                
+                    <a href="daa.html">
+                        daa 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x28 - 
+                
+                
+                    <a href="jr.html">
+                        jr 
+                        z, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x29 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        hl, hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2a - 
+                
+                
+                    <a href="ldi.html">
+                        ldi 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2b - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2c - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2d - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x2f - 
+                
+                
+                    <a href="cpl.html">
+                        cpl 
+                        
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x30 - 
+                
+                
+                    <a href="jr.html">
+                        jr 
+                        nc, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x31 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        sp, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x32 - 
+                
+                
+                    <a href="ldd.html">
+                        ldd 
+                        (hl), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x33 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        sp
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x34 - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x35 - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x36 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x37 - 
+                
+                
+                    <a href="scf.html">
+                        scf 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x38 - 
+                
+                
+                    <a href="jr.html">
+                        jr 
+                        c, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x39 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        hl, sp
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3a - 
+                
+                
+                    <a href="ldd.html">
+                        ldd 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3b - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        sp
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3c - 
+                
+                
+                    <a href="inc.html">
+                        inc 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3d - 
+                
+                
+                    <a href="dec.html">
+                        dec 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x3f - 
+                
+                
+                    <a href="ccf.html">
+                        ccf 
+                        
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x40 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x41 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x42 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x43 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x44 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x45 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x46 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x47 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        b, a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x48 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x49 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4b - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4c - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4d - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x4f - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        c, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x50 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x51 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x52 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x53 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x54 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x55 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x56 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x57 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        d, a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x58 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x59 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5b - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5c - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5d - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x5f - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        e, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x60 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x61 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x62 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x63 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x64 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x65 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x66 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x67 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        h, a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x68 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x69 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6b - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6c - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6d - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x6f - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        l, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x70 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x71 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x72 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x73 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x74 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x75 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x76 - 
+                
+                
+                    <a href="halt.html">
+                        halt 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x77 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (hl), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x78 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x79 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7a - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7b - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7c - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7d - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7e - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x7f - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x80 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x81 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x82 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x83 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x84 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x85 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x86 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x87 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x88 - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x89 - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8a - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8b - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8c - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8d - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8e - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x8f - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0x90 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x91 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x92 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x93 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x94 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x95 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x96 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x97 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x98 - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x99 - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9a - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9b - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9c - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9d - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9e - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0x9f - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xa0 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa1 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa2 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa3 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa4 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa5 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa6 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa7 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa8 - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xa9 - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xaa - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xab - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xac - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xad - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xae - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xaf - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xb0 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb1 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb2 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb3 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb4 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb5 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb6 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb7 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb8 - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        b
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xb9 - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xba - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        d
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xbb - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        e
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xbc - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        h
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xbd - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        l
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xbe - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xbf - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        a
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xc0 - 
+                
+                
+                    <a href="ret.html">
+                        ret 
+                        nz
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc1 - 
+                
+                
+                    <a href="pop.html">
+                        pop 
+                        bc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc2 - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        nz, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc3 - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc4 - 
+                
+                
+                    <a href="call.html">
+                        call 
+                        nz, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc5 - 
+                
+                
+                    <a href="push.html">
+                        push 
+                        bc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc6 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        a, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc7 - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        0
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc8 - 
+                
+                
+                    <a href="ret.html">
+                        ret 
+                        z
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xc9 - 
+                
+                
+                    <a href="ret.html">
+                        ret 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xca - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        z, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xcb - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xcc - 
+                
+                
+                    <a href="call.html">
+                        call 
+                        z, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xcd - 
+                
+                
+                    <a href="call.html">
+                        call 
+                        word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xce - 
+                
+                
+                    <a href="adc.html">
+                        adc 
+                        a, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xcf - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        8
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xd0 - 
+                
+                
+                    <a href="ret.html">
+                        ret 
+                        nc
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd1 - 
+                
+                
+                    <a href="pop.html">
+                        pop 
+                        de
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd2 - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        nc, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd3 - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xd4 - 
+                
+                
+                    <a href="call.html">
+                        call 
+                        nc, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd5 - 
+                
+                
+                    <a href="push.html">
+                        push 
+                        de
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd6 - 
+                
+                
+                    <a href="sub.html">
+                        sub 
+                        a, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd7 - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        10
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd8 - 
+                
+                
+                    <a href="ret.html">
+                        ret 
+                        c
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xd9 - 
+                
+                
+                    <a href="reti.html">
+                        reti 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xda - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        c, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xdb - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xdc - 
+                
+                
+                    <a href="call.html">
+                        call 
+                        c, word
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xdd - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xde - 
+                
+                
+                    <a href="sbc.html">
+                        sbc 
+                        a, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xdf - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        18
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xe0 - 
+                
+                
+                    <a href="ldh.html">
+                        ldh 
+                        (byte), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe1 - 
+                
+                
+                    <a href="pop.html">
+                        pop 
+                        hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe2 - 
+                
+                
+                    <a href="ldh.html">
+                        ldh 
+                        (c), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe3 - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xe4 - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xe5 - 
+                
+                
+                    <a href="push.html">
+                        push 
+                        hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe6 - 
+                
+                
+                    <a href="and.html">
+                        and 
+                        byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe7 - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        20
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe8 - 
+                
+                
+                    <a href="add.html">
+                        add 
+                        sp, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xe9 - 
+                
+                
+                    <a href="jp.html">
+                        jp 
+                        (hl)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xea - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        (word), a
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xeb - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xec - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xed - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xee - 
+                
+                
+                    <a href="xor.html">
+                        xor 
+                        byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xef - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        28
+                    </a>
+                
+            </li>
+        
+    
+        
+            <li>
+                0xf0 - 
+                
+                
+                    <a href="ldh.html">
+                        ldh 
+                        a, (byte)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf1 - 
+                
+                
+                    <a href="pop.html">
+                        pop 
+                        af
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf2 - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xf3 - 
+                
+                
+                    <a href="di.html">
+                        di 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf4 - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xf5 - 
+                
+                
+                    <a href="push.html">
+                        push 
+                        af
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf6 - 
+                
+                
+                    <a href="or.html">
+                        or 
+                        byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf7 - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        30
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf8 - 
+                
+                
+                    <a href="ldhl.html">
+                        ldhl 
+                        sp, byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xf9 - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        sp, hl
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xfa - 
+                
+                
+                    <a href="ld.html">
+                        ld 
+                        a, (word)
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xfb - 
+                
+                
+                    <a href="ei.html">
+                        ei 
+                        
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xfc - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xfd - 
+                
+                
+                    -
+                
+            </li>
+        
+            <li>
+                0xfe - 
+                
+                
+                    <a href="cp.html">
+                        cp 
+                        byte
+                    </a>
+                
+            </li>
+        
+            <li>
+                0xff - 
+                
+                
+                    <a href="rst.html">
+                        rst 
+                        38
+                    </a>
+                
+            </li>
+        
+    
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>

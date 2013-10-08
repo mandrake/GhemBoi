@@ -233,7 +233,7 @@
     "DE": {"op": "sbc", "operands": ["a", "byte"], "follows": ["byte"]},
     "DF": {"op": "rst", "operands": ["18"]},
 
-    "E0": {"op": "ldh", "operands": ["(byte + 0xff00)", "a"], "follows": ["byte"]},
+    "E0": {"op": "ldh", "operands": ["(byte)", "a"], "follows": ["byte"]},
     "E1": {"op": "pop", "operands": ["hl"]},
     "E2": {"op": "ldh", "operands": ["(c)", "a"]},
     "E5": {"op": "push", "operands": ["hl"]},
