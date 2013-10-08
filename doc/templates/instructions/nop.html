@@ -1,0 +1,19 @@
+{% set instr_name = "nop" %}
+{% set instr_size = "1" %}
+{% set instr_cycles = "4" %}
+{% extends "instruction.html" %}
+
+{% block syntax %}
+nop
+{% endblock %}
+
+{% block c_snippet %}
+if (opcode == 0x00) ;
+
+{% endblock %}
+
+{% block py_snippet %}
+if opcode == 0x00:
+    pass
+
+{% endblock %}

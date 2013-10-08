@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+</script>
+{% endblock %}
+
+{% block header %}
+    GhemBoi documentation - instructions reference
+{% endblock %}
+
+{% block body %}
+    Instruction {{ instr_name }}<br/>
+    Size (bytes): {{ instr_size }}<br/>
+    Clock cycles: {{ instr_cycles }}
+    <div id="syntax">
+        <div class="bigtitle">Syntax</div>
+            {% block syntax %}
+            {% endblock %}
+        </div>
+        <div class="bigtitle">Code snippets</div>
+        <div id="code-C" class="c">
+            <div class="title">
+                C
+            </div>
+            <pre>
+                <code>{% block c_snippet %}{% endblock %}</code>
+            </pre>
+        </div>
+        <div id="code-PY">
+            <div class="title">
+                python
+            </div>
+            <pre>
+                <code class="python">{% block py_snippet %}{% endblock %}</code>
+            </pre>
+        </div>
+    </div>
+{% endblock %}

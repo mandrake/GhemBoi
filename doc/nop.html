@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            #opcodes-table,
+            #opcodes-table tr,
+            #opcodes-table td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            #opcodes-table {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-top: 1px dotted #ccc;
+                border-bottom: : 1px dotted #ccc;
+            }
+
+            #opcodes-table td {
+                font-family: monospace;
+                width: 80px;
+                height: 60px;
+                text-align: center;
+            }
+
+            #opcodes {
+                text-align: center;
+            }
+
+            #opcodes-list {
+                text-align: left;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 1px dotted #ccc;
+                border-bottom: 1px dotted #ccc;
+            }
+
+            #opcodes-list li {
+                font-family: monospace;
+            }
+
+            #content {
+                max-width: 900px;
+                margin: auto;
+                box-shadow: 0px 0px 15px #888888;
+            }
+
+            #header {
+                height: 120px;
+                background: #dde;
+                line-height: 120px;
+                font-size: 36px;
+                text-align: center;
+                background-image: url('./gameboy_.png');
+                background-repeat: no-repeat;
+                background-position: 40px 10px;
+            }
+
+            #body {
+                padding: 35px;
+            }
+
+            code {
+                border: 1px dotted #ccc;
+            }
+
+            pre {
+                padding: 0;
+                margin: 0;
+            }
+
+            .title {
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+            }
+
+            .bigtitle {
+                margin: 0;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                padding: 0;
+                padding-bottom: 10px;
+                font-size: 40px;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+        
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+
+        
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+</script>
+
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                
+    GhemBoi documentation - instructions reference
+
+            </div>
+            <div id="body">
+                
+    Instruction nop<br/>
+    Size (bytes): 1<br/>
+    Clock cycles: 4
+    <div id="syntax">
+        <div class="bigtitle">Syntax</div>
+            
+nop
+
+        </div>
+        <div class="bigtitle">Code snippets</div>
+        <div id="code-C" class="c">
+            <div class="title">
+                C
+            </div>
+            <pre>
+                <code>
+if (opcode == 0x00) ;
+
+</code>
+            </pre>
+        </div>
+        <div id="code-PY">
+            <div class="title">
+                python
+            </div>
+            <pre>
+                <code class="python">
+if opcode == 0x00:
+    pass
+
+</code>
+            </pre>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </body>
+</html>
