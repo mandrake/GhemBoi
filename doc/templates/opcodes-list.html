@@ -1,6 +1,12 @@
 {% extends "base.html" %}
+
+{% block header %}
+    GhemBoi documentation - opcode list
+{% endblock %}
+
 {% block body %}
 <div id="opcodes">
+    <a href="opcodes-table.html">View as a table</a>
     <ul id="opcodes-list">
     {% for i in range(0, 16) %}
         {% for j in range(0, 16) %}
@@ -18,5 +24,7 @@
             </li>
         {% endfor %}
     {% endfor %}
+    </ul>
+    <a href="opcodes-table.html">View as a table</a>
 </div>
 {% endblock %}

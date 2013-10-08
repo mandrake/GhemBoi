@@ -9,6 +9,13 @@
                 border-collapse: collapse;
             }
 
+            #opcodes-table {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-top: 1px dotted #ccc;
+                border-bottom: : 1px dotted #ccc;
+            }
+
             #opcodes-table td {
                 font-family: monospace;
                 width: 80px;
@@ -16,20 +23,87 @@
                 text-align: center;
             }
 
+            #opcodes {
+                text-align: center;
+            }
+
+            #opcodes-list {
+                text-align: left;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 1px dotted #ccc;
+                border-bottom: 1px dotted #ccc;
+            }
+
             #opcodes-list li {
                 font-family: monospace;
             }
+
+            #content {
+                max-width: 900px;
+                margin: auto;
+                box-shadow: 0px 0px 15px #888888;
+            }
+
+            #header {
+                height: 120px;
+                background: #dde;
+                line-height: 120px;
+                font-size: 36px;
+                text-align: center;
+                background-image: url('./gameboy_.png');
+                background-repeat: no-repeat;
+                background-position: 40px 10px;
+            }
+
+            #body {
+                padding: 35px;
+            }
+
+            code {
+                border: 1px dotted #ccc;
+            }
+
+            pre {
+                padding: 0;
+                margin: 0;
+            }
+
+            .title {
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+            }
+
+            .bigtitle {
+                margin: 0;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                padding: 0;
+                padding-bottom: 10px;
+                font-size: 40px;
+                border-bottom: 1px solid #ddd;
+            }
         </style>
+        
+        
+        
+        
     </head>
     <body>
-        <div id="container">
+        <div id="content">
             <div id="header">
+                
+    GhemBoi documentation - opcode table
+
             </div>
             <div id="body">
                 
 <div id="opcodes">
+    <a href="opcodes-list.html">View as a list</a>
     <table id="opcodes-table">
-        <thead>
+        <thead></thead>
+        <tbody>
             <tr>
                 <td></td>
                 
@@ -66,16 +140,14 @@
                     <td>0x-f</td>
                 
             </tr>
-        </thead>
-        <tbody>
             
                 <tr>
                     <td>0x0-</td>
                 
                     <td>
-                        0x00
                         
-                        <br/>
+                        <!-- 0x00
+                        <br/-->
                         
                             <a href="nop.html">
                                 nop 
@@ -85,9 +157,9 @@
                     </td>
                 
                     <td>
-                        0x01
                         
-                        <br/>
+                        <!-- 0x01
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -97,9 +169,9 @@
                     </td>
                 
                     <td>
-                        0x02
                         
-                        <br/>
+                        <!-- 0x02
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -109,9 +181,9 @@
                     </td>
                 
                     <td>
-                        0x03
                         
-                        <br/>
+                        <!-- 0x03
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -121,9 +193,9 @@
                     </td>
                 
                     <td>
-                        0x04
                         
-                        <br/>
+                        <!-- 0x04
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -133,9 +205,9 @@
                     </td>
                 
                     <td>
-                        0x05
                         
-                        <br/>
+                        <!-- 0x05
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -145,9 +217,9 @@
                     </td>
                 
                     <td>
-                        0x06
                         
-                        <br/>
+                        <!-- 0x06
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -157,9 +229,9 @@
                     </td>
                 
                     <td>
-                        0x07
                         
-                        <br/>
+                        <!-- 0x07
+                        <br/-->
                         
                             <a href="rlc.html">
                                 rlc 
@@ -169,9 +241,9 @@
                     </td>
                 
                     <td>
-                        0x08
                         
-                        <br/>
+                        <!-- 0x08
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -181,9 +253,9 @@
                     </td>
                 
                     <td>
-                        0x09
                         
-                        <br/>
+                        <!-- 0x09
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -193,9 +265,9 @@
                     </td>
                 
                     <td>
-                        0x0a
                         
-                        <br/>
+                        <!-- 0x0a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -205,9 +277,9 @@
                     </td>
                 
                     <td>
-                        0x0b
                         
-                        <br/>
+                        <!-- 0x0b
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -217,9 +289,9 @@
                     </td>
                 
                     <td>
-                        0x0c
                         
-                        <br/>
+                        <!-- 0x0c
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -229,9 +301,9 @@
                     </td>
                 
                     <td>
-                        0x0d
                         
-                        <br/>
+                        <!-- 0x0d
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -241,9 +313,9 @@
                     </td>
                 
                     <td>
-                        0x0e
                         
-                        <br/>
+                        <!-- 0x0e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -253,9 +325,9 @@
                     </td>
                 
                     <td>
-                        0x0f
                         
-                        <br/>
+                        <!-- 0x0f
+                        <br/-->
                         
                             <a href="rrc.html">
                                 rrc 
@@ -269,9 +341,9 @@
                     <td>0x1-</td>
                 
                     <td>
-                        0x10
                         
-                        <br/>
+                        <!-- 0x10
+                        <br/-->
                         
                             <a href="stop.html">
                                 stop 
@@ -281,9 +353,9 @@
                     </td>
                 
                     <td>
-                        0x11
                         
-                        <br/>
+                        <!-- 0x11
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -293,9 +365,9 @@
                     </td>
                 
                     <td>
-                        0x12
                         
-                        <br/>
+                        <!-- 0x12
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -305,9 +377,9 @@
                     </td>
                 
                     <td>
-                        0x13
                         
-                        <br/>
+                        <!-- 0x13
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -317,9 +389,9 @@
                     </td>
                 
                     <td>
-                        0x14
                         
-                        <br/>
+                        <!-- 0x14
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -329,9 +401,9 @@
                     </td>
                 
                     <td>
-                        0x15
                         
-                        <br/>
+                        <!-- 0x15
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -341,9 +413,9 @@
                     </td>
                 
                     <td>
-                        0x16
                         
-                        <br/>
+                        <!-- 0x16
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -353,9 +425,9 @@
                     </td>
                 
                     <td>
-                        0x17
                         
-                        <br/>
+                        <!-- 0x17
+                        <br/-->
                         
                             <a href="rl.html">
                                 rl 
@@ -365,9 +437,9 @@
                     </td>
                 
                     <td>
-                        0x18
                         
-                        <br/>
+                        <!-- 0x18
+                        <br/-->
                         
                             <a href="jr.html">
                                 jr 
@@ -377,9 +449,9 @@
                     </td>
                 
                     <td>
-                        0x19
                         
-                        <br/>
+                        <!-- 0x19
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -389,9 +461,9 @@
                     </td>
                 
                     <td>
-                        0x1a
                         
-                        <br/>
+                        <!-- 0x1a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -401,9 +473,9 @@
                     </td>
                 
                     <td>
-                        0x1b
                         
-                        <br/>
+                        <!-- 0x1b
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -413,9 +485,9 @@
                     </td>
                 
                     <td>
-                        0x1c
                         
-                        <br/>
+                        <!-- 0x1c
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -425,9 +497,9 @@
                     </td>
                 
                     <td>
-                        0x1d
                         
-                        <br/>
+                        <!-- 0x1d
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -437,9 +509,9 @@
                     </td>
                 
                     <td>
-                        0x1e
                         
-                        <br/>
+                        <!-- 0x1e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -449,9 +521,9 @@
                     </td>
                 
                     <td>
-                        0x1f
                         
-                        <br/>
+                        <!-- 0x1f
+                        <br/-->
                         
                             <a href="rr.html">
                                 rr 
@@ -465,9 +537,9 @@
                     <td>0x2-</td>
                 
                     <td>
-                        0x20
                         
-                        <br/>
+                        <!-- 0x20
+                        <br/-->
                         
                             <a href="jr.html">
                                 jr 
@@ -477,9 +549,9 @@
                     </td>
                 
                     <td>
-                        0x21
                         
-                        <br/>
+                        <!-- 0x21
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -489,9 +561,9 @@
                     </td>
                 
                     <td>
-                        0x22
                         
-                        <br/>
+                        <!-- 0x22
+                        <br/-->
                         
                             <a href="ldi.html">
                                 ldi 
@@ -501,9 +573,9 @@
                     </td>
                 
                     <td>
-                        0x23
                         
-                        <br/>
+                        <!-- 0x23
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -513,9 +585,9 @@
                     </td>
                 
                     <td>
-                        0x24
                         
-                        <br/>
+                        <!-- 0x24
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -525,9 +597,9 @@
                     </td>
                 
                     <td>
-                        0x25
                         
-                        <br/>
+                        <!-- 0x25
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -537,9 +609,9 @@
                     </td>
                 
                     <td>
-                        0x26
                         
-                        <br/>
+                        <!-- 0x26
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -549,9 +621,9 @@
                     </td>
                 
                     <td>
-                        0x27
                         
-                        <br/>
+                        <!-- 0x27
+                        <br/-->
                         
                             <a href="daa.html">
                                 daa 
@@ -561,9 +633,9 @@
                     </td>
                 
                     <td>
-                        0x28
                         
-                        <br/>
+                        <!-- 0x28
+                        <br/-->
                         
                             <a href="jr.html">
                                 jr 
@@ -573,9 +645,9 @@
                     </td>
                 
                     <td>
-                        0x29
                         
-                        <br/>
+                        <!-- 0x29
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -585,9 +657,9 @@
                     </td>
                 
                     <td>
-                        0x2a
                         
-                        <br/>
+                        <!-- 0x2a
+                        <br/-->
                         
                             <a href="ldi.html">
                                 ldi 
@@ -597,9 +669,9 @@
                     </td>
                 
                     <td>
-                        0x2b
                         
-                        <br/>
+                        <!-- 0x2b
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -609,9 +681,9 @@
                     </td>
                 
                     <td>
-                        0x2c
                         
-                        <br/>
+                        <!-- 0x2c
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -621,9 +693,9 @@
                     </td>
                 
                     <td>
-                        0x2d
                         
-                        <br/>
+                        <!-- 0x2d
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -633,9 +705,9 @@
                     </td>
                 
                     <td>
-                        0x2e
                         
-                        <br/>
+                        <!-- 0x2e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -645,9 +717,9 @@
                     </td>
                 
                     <td>
-                        0x2f
                         
-                        <br/>
+                        <!-- 0x2f
+                        <br/-->
                         
                             <a href="cpl.html">
                                 cpl 
@@ -661,9 +733,9 @@
                     <td>0x3-</td>
                 
                     <td>
-                        0x30
                         
-                        <br/>
+                        <!-- 0x30
+                        <br/-->
                         
                             <a href="jr.html">
                                 jr 
@@ -673,9 +745,9 @@
                     </td>
                 
                     <td>
-                        0x31
                         
-                        <br/>
+                        <!-- 0x31
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -685,9 +757,9 @@
                     </td>
                 
                     <td>
-                        0x32
                         
-                        <br/>
+                        <!-- 0x32
+                        <br/-->
                         
                             <a href="ldd.html">
                                 ldd 
@@ -697,9 +769,9 @@
                     </td>
                 
                     <td>
-                        0x33
                         
-                        <br/>
+                        <!-- 0x33
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -709,9 +781,9 @@
                     </td>
                 
                     <td>
-                        0x34
                         
-                        <br/>
+                        <!-- 0x34
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -721,9 +793,9 @@
                     </td>
                 
                     <td>
-                        0x35
                         
-                        <br/>
+                        <!-- 0x35
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -733,9 +805,9 @@
                     </td>
                 
                     <td>
-                        0x36
                         
-                        <br/>
+                        <!-- 0x36
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -745,9 +817,9 @@
                     </td>
                 
                     <td>
-                        0x37
                         
-                        <br/>
+                        <!-- 0x37
+                        <br/-->
                         
                             <a href="scf.html">
                                 scf 
@@ -757,9 +829,9 @@
                     </td>
                 
                     <td>
-                        0x38
                         
-                        <br/>
+                        <!-- 0x38
+                        <br/-->
                         
                             <a href="jr.html">
                                 jr 
@@ -769,9 +841,9 @@
                     </td>
                 
                     <td>
-                        0x39
                         
-                        <br/>
+                        <!-- 0x39
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -781,9 +853,9 @@
                     </td>
                 
                     <td>
-                        0x3a
                         
-                        <br/>
+                        <!-- 0x3a
+                        <br/-->
                         
                             <a href="ldd.html">
                                 ldd 
@@ -793,9 +865,9 @@
                     </td>
                 
                     <td>
-                        0x3b
                         
-                        <br/>
+                        <!-- 0x3b
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -805,9 +877,9 @@
                     </td>
                 
                     <td>
-                        0x3c
                         
-                        <br/>
+                        <!-- 0x3c
+                        <br/-->
                         
                             <a href="inc.html">
                                 inc 
@@ -817,9 +889,9 @@
                     </td>
                 
                     <td>
-                        0x3d
                         
-                        <br/>
+                        <!-- 0x3d
+                        <br/-->
                         
                             <a href="dec.html">
                                 dec 
@@ -829,9 +901,9 @@
                     </td>
                 
                     <td>
-                        0x3e
                         
-                        <br/>
+                        <!-- 0x3e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -841,9 +913,9 @@
                     </td>
                 
                     <td>
-                        0x3f
                         
-                        <br/>
+                        <!-- 0x3f
+                        <br/-->
                         
                             <a href="ccf.html">
                                 ccf 
@@ -857,9 +929,9 @@
                     <td>0x4-</td>
                 
                     <td>
-                        0x40
                         
-                        <br/>
+                        <!-- 0x40
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -869,9 +941,9 @@
                     </td>
                 
                     <td>
-                        0x41
                         
-                        <br/>
+                        <!-- 0x41
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -881,9 +953,9 @@
                     </td>
                 
                     <td>
-                        0x42
                         
-                        <br/>
+                        <!-- 0x42
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -893,9 +965,9 @@
                     </td>
                 
                     <td>
-                        0x43
                         
-                        <br/>
+                        <!-- 0x43
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -905,9 +977,9 @@
                     </td>
                 
                     <td>
-                        0x44
                         
-                        <br/>
+                        <!-- 0x44
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -917,9 +989,9 @@
                     </td>
                 
                     <td>
-                        0x45
                         
-                        <br/>
+                        <!-- 0x45
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -929,9 +1001,9 @@
                     </td>
                 
                     <td>
-                        0x46
                         
-                        <br/>
+                        <!-- 0x46
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -941,9 +1013,9 @@
                     </td>
                 
                     <td>
-                        0x47
                         
-                        <br/>
+                        <!-- 0x47
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -953,9 +1025,9 @@
                     </td>
                 
                     <td>
-                        0x48
                         
-                        <br/>
+                        <!-- 0x48
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -965,9 +1037,9 @@
                     </td>
                 
                     <td>
-                        0x49
                         
-                        <br/>
+                        <!-- 0x49
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -977,9 +1049,9 @@
                     </td>
                 
                     <td>
-                        0x4a
                         
-                        <br/>
+                        <!-- 0x4a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -989,9 +1061,9 @@
                     </td>
                 
                     <td>
-                        0x4b
                         
-                        <br/>
+                        <!-- 0x4b
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1001,9 +1073,9 @@
                     </td>
                 
                     <td>
-                        0x4c
                         
-                        <br/>
+                        <!-- 0x4c
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1013,9 +1085,9 @@
                     </td>
                 
                     <td>
-                        0x4d
                         
-                        <br/>
+                        <!-- 0x4d
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1025,9 +1097,9 @@
                     </td>
                 
                     <td>
-                        0x4e
                         
-                        <br/>
+                        <!-- 0x4e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1037,9 +1109,9 @@
                     </td>
                 
                     <td>
-                        0x4f
                         
-                        <br/>
+                        <!-- 0x4f
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1053,9 +1125,9 @@
                     <td>0x5-</td>
                 
                     <td>
-                        0x50
                         
-                        <br/>
+                        <!-- 0x50
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1065,9 +1137,9 @@
                     </td>
                 
                     <td>
-                        0x51
                         
-                        <br/>
+                        <!-- 0x51
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1077,9 +1149,9 @@
                     </td>
                 
                     <td>
-                        0x52
                         
-                        <br/>
+                        <!-- 0x52
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1089,9 +1161,9 @@
                     </td>
                 
                     <td>
-                        0x53
                         
-                        <br/>
+                        <!-- 0x53
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1101,9 +1173,9 @@
                     </td>
                 
                     <td>
-                        0x54
                         
-                        <br/>
+                        <!-- 0x54
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1113,9 +1185,9 @@
                     </td>
                 
                     <td>
-                        0x55
                         
-                        <br/>
+                        <!-- 0x55
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1125,9 +1197,9 @@
                     </td>
                 
                     <td>
-                        0x56
                         
-                        <br/>
+                        <!-- 0x56
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1137,9 +1209,9 @@
                     </td>
                 
                     <td>
-                        0x57
                         
-                        <br/>
+                        <!-- 0x57
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1149,9 +1221,9 @@
                     </td>
                 
                     <td>
-                        0x58
                         
-                        <br/>
+                        <!-- 0x58
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1161,9 +1233,9 @@
                     </td>
                 
                     <td>
-                        0x59
                         
-                        <br/>
+                        <!-- 0x59
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1173,9 +1245,9 @@
                     </td>
                 
                     <td>
-                        0x5a
                         
-                        <br/>
+                        <!-- 0x5a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1185,9 +1257,9 @@
                     </td>
                 
                     <td>
-                        0x5b
                         
-                        <br/>
+                        <!-- 0x5b
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1197,9 +1269,9 @@
                     </td>
                 
                     <td>
-                        0x5c
                         
-                        <br/>
+                        <!-- 0x5c
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1209,9 +1281,9 @@
                     </td>
                 
                     <td>
-                        0x5d
                         
-                        <br/>
+                        <!-- 0x5d
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1221,9 +1293,9 @@
                     </td>
                 
                     <td>
-                        0x5e
                         
-                        <br/>
+                        <!-- 0x5e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1233,9 +1305,9 @@
                     </td>
                 
                     <td>
-                        0x5f
                         
-                        <br/>
+                        <!-- 0x5f
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1249,9 +1321,9 @@
                     <td>0x6-</td>
                 
                     <td>
-                        0x60
                         
-                        <br/>
+                        <!-- 0x60
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1261,9 +1333,9 @@
                     </td>
                 
                     <td>
-                        0x61
                         
-                        <br/>
+                        <!-- 0x61
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1273,9 +1345,9 @@
                     </td>
                 
                     <td>
-                        0x62
                         
-                        <br/>
+                        <!-- 0x62
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1285,9 +1357,9 @@
                     </td>
                 
                     <td>
-                        0x63
                         
-                        <br/>
+                        <!-- 0x63
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1297,9 +1369,9 @@
                     </td>
                 
                     <td>
-                        0x64
                         
-                        <br/>
+                        <!-- 0x64
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1309,9 +1381,9 @@
                     </td>
                 
                     <td>
-                        0x65
                         
-                        <br/>
+                        <!-- 0x65
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1321,9 +1393,9 @@
                     </td>
                 
                     <td>
-                        0x66
                         
-                        <br/>
+                        <!-- 0x66
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1333,9 +1405,9 @@
                     </td>
                 
                     <td>
-                        0x67
                         
-                        <br/>
+                        <!-- 0x67
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1345,9 +1417,9 @@
                     </td>
                 
                     <td>
-                        0x68
                         
-                        <br/>
+                        <!-- 0x68
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1357,9 +1429,9 @@
                     </td>
                 
                     <td>
-                        0x69
                         
-                        <br/>
+                        <!-- 0x69
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1369,9 +1441,9 @@
                     </td>
                 
                     <td>
-                        0x6a
                         
-                        <br/>
+                        <!-- 0x6a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1381,9 +1453,9 @@
                     </td>
                 
                     <td>
-                        0x6b
                         
-                        <br/>
+                        <!-- 0x6b
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1393,9 +1465,9 @@
                     </td>
                 
                     <td>
-                        0x6c
                         
-                        <br/>
+                        <!-- 0x6c
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1405,9 +1477,9 @@
                     </td>
                 
                     <td>
-                        0x6d
                         
-                        <br/>
+                        <!-- 0x6d
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1417,9 +1489,9 @@
                     </td>
                 
                     <td>
-                        0x6e
                         
-                        <br/>
+                        <!-- 0x6e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1429,9 +1501,9 @@
                     </td>
                 
                     <td>
-                        0x6f
                         
-                        <br/>
+                        <!-- 0x6f
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1445,9 +1517,9 @@
                     <td>0x7-</td>
                 
                     <td>
-                        0x70
                         
-                        <br/>
+                        <!-- 0x70
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1457,9 +1529,9 @@
                     </td>
                 
                     <td>
-                        0x71
                         
-                        <br/>
+                        <!-- 0x71
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1469,9 +1541,9 @@
                     </td>
                 
                     <td>
-                        0x72
                         
-                        <br/>
+                        <!-- 0x72
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1481,9 +1553,9 @@
                     </td>
                 
                     <td>
-                        0x73
                         
-                        <br/>
+                        <!-- 0x73
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1493,9 +1565,9 @@
                     </td>
                 
                     <td>
-                        0x74
                         
-                        <br/>
+                        <!-- 0x74
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1505,9 +1577,9 @@
                     </td>
                 
                     <td>
-                        0x75
                         
-                        <br/>
+                        <!-- 0x75
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1517,9 +1589,9 @@
                     </td>
                 
                     <td>
-                        0x76
                         
-                        <br/>
+                        <!-- 0x76
+                        <br/-->
                         
                             <a href="halt.html">
                                 halt 
@@ -1529,9 +1601,9 @@
                     </td>
                 
                     <td>
-                        0x77
                         
-                        <br/>
+                        <!-- 0x77
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1541,9 +1613,9 @@
                     </td>
                 
                     <td>
-                        0x78
                         
-                        <br/>
+                        <!-- 0x78
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1553,9 +1625,9 @@
                     </td>
                 
                     <td>
-                        0x79
                         
-                        <br/>
+                        <!-- 0x79
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1565,9 +1637,9 @@
                     </td>
                 
                     <td>
-                        0x7a
                         
-                        <br/>
+                        <!-- 0x7a
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1577,9 +1649,9 @@
                     </td>
                 
                     <td>
-                        0x7b
                         
-                        <br/>
+                        <!-- 0x7b
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1589,9 +1661,9 @@
                     </td>
                 
                     <td>
-                        0x7c
                         
-                        <br/>
+                        <!-- 0x7c
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1601,9 +1673,9 @@
                     </td>
                 
                     <td>
-                        0x7d
                         
-                        <br/>
+                        <!-- 0x7d
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1613,9 +1685,9 @@
                     </td>
                 
                     <td>
-                        0x7e
                         
-                        <br/>
+                        <!-- 0x7e
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1625,9 +1697,9 @@
                     </td>
                 
                     <td>
-                        0x7f
                         
-                        <br/>
+                        <!-- 0x7f
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -1641,9 +1713,9 @@
                     <td>0x8-</td>
                 
                     <td>
-                        0x80
                         
-                        <br/>
+                        <!-- 0x80
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1653,9 +1725,9 @@
                     </td>
                 
                     <td>
-                        0x81
                         
-                        <br/>
+                        <!-- 0x81
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1665,9 +1737,9 @@
                     </td>
                 
                     <td>
-                        0x82
                         
-                        <br/>
+                        <!-- 0x82
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1677,9 +1749,9 @@
                     </td>
                 
                     <td>
-                        0x83
                         
-                        <br/>
+                        <!-- 0x83
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1689,9 +1761,9 @@
                     </td>
                 
                     <td>
-                        0x84
                         
-                        <br/>
+                        <!-- 0x84
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1701,9 +1773,9 @@
                     </td>
                 
                     <td>
-                        0x85
                         
-                        <br/>
+                        <!-- 0x85
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1713,9 +1785,9 @@
                     </td>
                 
                     <td>
-                        0x86
                         
-                        <br/>
+                        <!-- 0x86
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1725,9 +1797,9 @@
                     </td>
                 
                     <td>
-                        0x87
                         
-                        <br/>
+                        <!-- 0x87
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -1737,9 +1809,9 @@
                     </td>
                 
                     <td>
-                        0x88
                         
-                        <br/>
+                        <!-- 0x88
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1749,9 +1821,9 @@
                     </td>
                 
                     <td>
-                        0x89
                         
-                        <br/>
+                        <!-- 0x89
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1761,9 +1833,9 @@
                     </td>
                 
                     <td>
-                        0x8a
                         
-                        <br/>
+                        <!-- 0x8a
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1773,9 +1845,9 @@
                     </td>
                 
                     <td>
-                        0x8b
                         
-                        <br/>
+                        <!-- 0x8b
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1785,9 +1857,9 @@
                     </td>
                 
                     <td>
-                        0x8c
                         
-                        <br/>
+                        <!-- 0x8c
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1797,9 +1869,9 @@
                     </td>
                 
                     <td>
-                        0x8d
                         
-                        <br/>
+                        <!-- 0x8d
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1809,9 +1881,9 @@
                     </td>
                 
                     <td>
-                        0x8e
                         
-                        <br/>
+                        <!-- 0x8e
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1821,9 +1893,9 @@
                     </td>
                 
                     <td>
-                        0x8f
                         
-                        <br/>
+                        <!-- 0x8f
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -1837,9 +1909,9 @@
                     <td>0x9-</td>
                 
                     <td>
-                        0x90
                         
-                        <br/>
+                        <!-- 0x90
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1849,9 +1921,9 @@
                     </td>
                 
                     <td>
-                        0x91
                         
-                        <br/>
+                        <!-- 0x91
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1861,9 +1933,9 @@
                     </td>
                 
                     <td>
-                        0x92
                         
-                        <br/>
+                        <!-- 0x92
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1873,9 +1945,9 @@
                     </td>
                 
                     <td>
-                        0x93
                         
-                        <br/>
+                        <!-- 0x93
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1885,9 +1957,9 @@
                     </td>
                 
                     <td>
-                        0x94
                         
-                        <br/>
+                        <!-- 0x94
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1897,9 +1969,9 @@
                     </td>
                 
                     <td>
-                        0x95
                         
-                        <br/>
+                        <!-- 0x95
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1909,9 +1981,9 @@
                     </td>
                 
                     <td>
-                        0x96
                         
-                        <br/>
+                        <!-- 0x96
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1921,9 +1993,9 @@
                     </td>
                 
                     <td>
-                        0x97
                         
-                        <br/>
+                        <!-- 0x97
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -1933,9 +2005,9 @@
                     </td>
                 
                     <td>
-                        0x98
                         
-                        <br/>
+                        <!-- 0x98
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -1945,9 +2017,9 @@
                     </td>
                 
                     <td>
-                        0x99
                         
-                        <br/>
+                        <!-- 0x99
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -1957,9 +2029,9 @@
                     </td>
                 
                     <td>
-                        0x9a
                         
-                        <br/>
+                        <!-- 0x9a
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -1969,9 +2041,9 @@
                     </td>
                 
                     <td>
-                        0x9b
                         
-                        <br/>
+                        <!-- 0x9b
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -1981,9 +2053,9 @@
                     </td>
                 
                     <td>
-                        0x9c
                         
-                        <br/>
+                        <!-- 0x9c
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -1993,9 +2065,9 @@
                     </td>
                 
                     <td>
-                        0x9d
                         
-                        <br/>
+                        <!-- 0x9d
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -2005,9 +2077,9 @@
                     </td>
                 
                     <td>
-                        0x9e
                         
-                        <br/>
+                        <!-- 0x9e
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -2017,9 +2089,9 @@
                     </td>
                 
                     <td>
-                        0x9f
                         
-                        <br/>
+                        <!-- 0x9f
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -2033,9 +2105,9 @@
                     <td>0xa-</td>
                 
                     <td>
-                        0xa0
                         
-                        <br/>
+                        <!-- 0xa0
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2045,9 +2117,9 @@
                     </td>
                 
                     <td>
-                        0xa1
                         
-                        <br/>
+                        <!-- 0xa1
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2057,9 +2129,9 @@
                     </td>
                 
                     <td>
-                        0xa2
                         
-                        <br/>
+                        <!-- 0xa2
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2069,9 +2141,9 @@
                     </td>
                 
                     <td>
-                        0xa3
                         
-                        <br/>
+                        <!-- 0xa3
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2081,9 +2153,9 @@
                     </td>
                 
                     <td>
-                        0xa4
                         
-                        <br/>
+                        <!-- 0xa4
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2093,9 +2165,9 @@
                     </td>
                 
                     <td>
-                        0xa5
                         
-                        <br/>
+                        <!-- 0xa5
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2105,9 +2177,9 @@
                     </td>
                 
                     <td>
-                        0xa6
                         
-                        <br/>
+                        <!-- 0xa6
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2117,9 +2189,9 @@
                     </td>
                 
                     <td>
-                        0xa7
                         
-                        <br/>
+                        <!-- 0xa7
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2129,9 +2201,9 @@
                     </td>
                 
                     <td>
-                        0xa8
                         
-                        <br/>
+                        <!-- 0xa8
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2141,9 +2213,9 @@
                     </td>
                 
                     <td>
-                        0xa9
                         
-                        <br/>
+                        <!-- 0xa9
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2153,9 +2225,9 @@
                     </td>
                 
                     <td>
-                        0xaa
                         
-                        <br/>
+                        <!-- 0xaa
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2165,9 +2237,9 @@
                     </td>
                 
                     <td>
-                        0xab
                         
-                        <br/>
+                        <!-- 0xab
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2177,9 +2249,9 @@
                     </td>
                 
                     <td>
-                        0xac
                         
-                        <br/>
+                        <!-- 0xac
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2189,9 +2261,9 @@
                     </td>
                 
                     <td>
-                        0xad
                         
-                        <br/>
+                        <!-- 0xad
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2201,9 +2273,9 @@
                     </td>
                 
                     <td>
-                        0xae
                         
-                        <br/>
+                        <!-- 0xae
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2213,9 +2285,9 @@
                     </td>
                 
                     <td>
-                        0xaf
                         
-                        <br/>
+                        <!-- 0xaf
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2229,9 +2301,9 @@
                     <td>0xb-</td>
                 
                     <td>
-                        0xb0
                         
-                        <br/>
+                        <!-- 0xb0
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2241,9 +2313,9 @@
                     </td>
                 
                     <td>
-                        0xb1
                         
-                        <br/>
+                        <!-- 0xb1
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2253,9 +2325,9 @@
                     </td>
                 
                     <td>
-                        0xb2
                         
-                        <br/>
+                        <!-- 0xb2
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2265,9 +2337,9 @@
                     </td>
                 
                     <td>
-                        0xb3
                         
-                        <br/>
+                        <!-- 0xb3
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2277,9 +2349,9 @@
                     </td>
                 
                     <td>
-                        0xb4
                         
-                        <br/>
+                        <!-- 0xb4
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2289,9 +2361,9 @@
                     </td>
                 
                     <td>
-                        0xb5
                         
-                        <br/>
+                        <!-- 0xb5
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2301,9 +2373,9 @@
                     </td>
                 
                     <td>
-                        0xb6
                         
-                        <br/>
+                        <!-- 0xb6
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2313,9 +2385,9 @@
                     </td>
                 
                     <td>
-                        0xb7
                         
-                        <br/>
+                        <!-- 0xb7
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -2325,9 +2397,9 @@
                     </td>
                 
                     <td>
-                        0xb8
                         
-                        <br/>
+                        <!-- 0xb8
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2337,9 +2409,9 @@
                     </td>
                 
                     <td>
-                        0xb9
                         
-                        <br/>
+                        <!-- 0xb9
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2349,9 +2421,9 @@
                     </td>
                 
                     <td>
-                        0xba
                         
-                        <br/>
+                        <!-- 0xba
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2361,9 +2433,9 @@
                     </td>
                 
                     <td>
-                        0xbb
                         
-                        <br/>
+                        <!-- 0xbb
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2373,9 +2445,9 @@
                     </td>
                 
                     <td>
-                        0xbc
                         
-                        <br/>
+                        <!-- 0xbc
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2385,9 +2457,9 @@
                     </td>
                 
                     <td>
-                        0xbd
                         
-                        <br/>
+                        <!-- 0xbd
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2397,9 +2469,9 @@
                     </td>
                 
                     <td>
-                        0xbe
                         
-                        <br/>
+                        <!-- 0xbe
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2409,9 +2481,9 @@
                     </td>
                 
                     <td>
-                        0xbf
                         
-                        <br/>
+                        <!-- 0xbf
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -2425,9 +2497,9 @@
                     <td>0xc-</td>
                 
                     <td>
-                        0xc0
                         
-                        <br/>
+                        <!-- 0xc0
+                        <br/-->
                         
                             <a href="ret.html">
                                 ret 
@@ -2437,9 +2509,9 @@
                     </td>
                 
                     <td>
-                        0xc1
                         
-                        <br/>
+                        <!-- 0xc1
+                        <br/-->
                         
                             <a href="pop.html">
                                 pop 
@@ -2449,9 +2521,9 @@
                     </td>
                 
                     <td>
-                        0xc2
                         
-                        <br/>
+                        <!-- 0xc2
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2461,9 +2533,9 @@
                     </td>
                 
                     <td>
-                        0xc3
                         
-                        <br/>
+                        <!-- 0xc3
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2473,9 +2545,9 @@
                     </td>
                 
                     <td>
-                        0xc4
                         
-                        <br/>
+                        <!-- 0xc4
+                        <br/-->
                         
                             <a href="call.html">
                                 call 
@@ -2485,9 +2557,9 @@
                     </td>
                 
                     <td>
-                        0xc5
                         
-                        <br/>
+                        <!-- 0xc5
+                        <br/-->
                         
                             <a href="push.html">
                                 push 
@@ -2497,9 +2569,9 @@
                     </td>
                 
                     <td>
-                        0xc6
                         
-                        <br/>
+                        <!-- 0xc6
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -2509,9 +2581,9 @@
                     </td>
                 
                     <td>
-                        0xc7
                         
-                        <br/>
+                        <!-- 0xc7
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2521,9 +2593,9 @@
                     </td>
                 
                     <td>
-                        0xc8
                         
-                        <br/>
+                        <!-- 0xc8
+                        <br/-->
                         
                             <a href="ret.html">
                                 ret 
@@ -2533,9 +2605,9 @@
                     </td>
                 
                     <td>
-                        0xc9
                         
-                        <br/>
+                        <!-- 0xc9
+                        <br/-->
                         
                             <a href="ret.html">
                                 ret 
@@ -2545,9 +2617,9 @@
                     </td>
                 
                     <td>
-                        0xca
                         
-                        <br/>
+                        <!-- 0xca
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2557,18 +2629,18 @@
                     </td>
                 
                     <td>
-                        0xcb
                         
-                        <br/>
+                        <!-- 0xcb
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xcc
                         
-                        <br/>
+                        <!-- 0xcc
+                        <br/-->
                         
                             <a href="call.html">
                                 call 
@@ -2578,9 +2650,9 @@
                     </td>
                 
                     <td>
-                        0xcd
                         
-                        <br/>
+                        <!-- 0xcd
+                        <br/-->
                         
                             <a href="call.html">
                                 call 
@@ -2590,9 +2662,9 @@
                     </td>
                 
                     <td>
-                        0xce
                         
-                        <br/>
+                        <!-- 0xce
+                        <br/-->
                         
                             <a href="adc.html">
                                 adc 
@@ -2602,9 +2674,9 @@
                     </td>
                 
                     <td>
-                        0xcf
                         
-                        <br/>
+                        <!-- 0xcf
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2618,9 +2690,9 @@
                     <td>0xd-</td>
                 
                     <td>
-                        0xd0
                         
-                        <br/>
+                        <!-- 0xd0
+                        <br/-->
                         
                             <a href="ret.html">
                                 ret 
@@ -2630,9 +2702,9 @@
                     </td>
                 
                     <td>
-                        0xd1
                         
-                        <br/>
+                        <!-- 0xd1
+                        <br/-->
                         
                             <a href="pop.html">
                                 pop 
@@ -2642,9 +2714,9 @@
                     </td>
                 
                     <td>
-                        0xd2
                         
-                        <br/>
+                        <!-- 0xd2
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2654,18 +2726,18 @@
                     </td>
                 
                     <td>
-                        0xd3
                         
-                        <br/>
+                        <!-- 0xd3
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xd4
                         
-                        <br/>
+                        <!-- 0xd4
+                        <br/-->
                         
                             <a href="call.html">
                                 call 
@@ -2675,9 +2747,9 @@
                     </td>
                 
                     <td>
-                        0xd5
                         
-                        <br/>
+                        <!-- 0xd5
+                        <br/-->
                         
                             <a href="push.html">
                                 push 
@@ -2687,9 +2759,9 @@
                     </td>
                 
                     <td>
-                        0xd6
                         
-                        <br/>
+                        <!-- 0xd6
+                        <br/-->
                         
                             <a href="sub.html">
                                 sub 
@@ -2699,9 +2771,9 @@
                     </td>
                 
                     <td>
-                        0xd7
                         
-                        <br/>
+                        <!-- 0xd7
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2711,9 +2783,9 @@
                     </td>
                 
                     <td>
-                        0xd8
                         
-                        <br/>
+                        <!-- 0xd8
+                        <br/-->
                         
                             <a href="ret.html">
                                 ret 
@@ -2723,9 +2795,9 @@
                     </td>
                 
                     <td>
-                        0xd9
                         
-                        <br/>
+                        <!-- 0xd9
+                        <br/-->
                         
                             <a href="reti.html">
                                 reti 
@@ -2735,9 +2807,9 @@
                     </td>
                 
                     <td>
-                        0xda
                         
-                        <br/>
+                        <!-- 0xda
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2747,18 +2819,18 @@
                     </td>
                 
                     <td>
-                        0xdb
                         
-                        <br/>
+                        <!-- 0xdb
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xdc
                         
-                        <br/>
+                        <!-- 0xdc
+                        <br/-->
                         
                             <a href="call.html">
                                 call 
@@ -2768,18 +2840,18 @@
                     </td>
                 
                     <td>
-                        0xdd
                         
-                        <br/>
+                        <!-- 0xdd
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xde
                         
-                        <br/>
+                        <!-- 0xde
+                        <br/-->
                         
                             <a href="sbc.html">
                                 sbc 
@@ -2789,9 +2861,9 @@
                     </td>
                 
                     <td>
-                        0xdf
                         
-                        <br/>
+                        <!-- 0xdf
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2805,9 +2877,9 @@
                     <td>0xe-</td>
                 
                     <td>
-                        0xe0
                         
-                        <br/>
+                        <!-- 0xe0
+                        <br/-->
                         
                             <a href="ldh.html">
                                 ldh 
@@ -2817,9 +2889,9 @@
                     </td>
                 
                     <td>
-                        0xe1
                         
-                        <br/>
+                        <!-- 0xe1
+                        <br/-->
                         
                             <a href="pop.html">
                                 pop 
@@ -2829,9 +2901,9 @@
                     </td>
                 
                     <td>
-                        0xe2
                         
-                        <br/>
+                        <!-- 0xe2
+                        <br/-->
                         
                             <a href="ldh.html">
                                 ldh 
@@ -2841,27 +2913,27 @@
                     </td>
                 
                     <td>
-                        0xe3
                         
-                        <br/>
-                        
-                            -
-                        
-                    </td>
-                
-                    <td>
-                        0xe4
-                        
-                        <br/>
+                        <!-- 0xe3
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xe5
                         
-                        <br/>
+                        <!-- 0xe4
+                        <br/-->
+                        
+                            -
+                        
+                    </td>
+                
+                    <td>
+                        
+                        <!-- 0xe5
+                        <br/-->
                         
                             <a href="push.html">
                                 push 
@@ -2871,9 +2943,9 @@
                     </td>
                 
                     <td>
-                        0xe6
                         
-                        <br/>
+                        <!-- 0xe6
+                        <br/-->
                         
                             <a href="and.html">
                                 and 
@@ -2883,9 +2955,9 @@
                     </td>
                 
                     <td>
-                        0xe7
                         
-                        <br/>
+                        <!-- 0xe7
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2895,9 +2967,9 @@
                     </td>
                 
                     <td>
-                        0xe8
                         
-                        <br/>
+                        <!-- 0xe8
+                        <br/-->
                         
                             <a href="add.html">
                                 add 
@@ -2907,9 +2979,9 @@
                     </td>
                 
                     <td>
-                        0xe9
                         
-                        <br/>
+                        <!-- 0xe9
+                        <br/-->
                         
                             <a href="jp.html">
                                 jp 
@@ -2919,9 +2991,9 @@
                     </td>
                 
                     <td>
-                        0xea
                         
-                        <br/>
+                        <!-- 0xea
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -2931,36 +3003,36 @@
                     </td>
                 
                     <td>
-                        0xeb
                         
-                        <br/>
-                        
-                            -
-                        
-                    </td>
-                
-                    <td>
-                        0xec
-                        
-                        <br/>
+                        <!-- 0xeb
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xed
                         
-                        <br/>
+                        <!-- 0xec
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xee
                         
-                        <br/>
+                        <!-- 0xed
+                        <br/-->
+                        
+                            -
+                        
+                    </td>
+                
+                    <td>
+                        
+                        <!-- 0xee
+                        <br/-->
                         
                             <a href="xor.html">
                                 xor 
@@ -2970,9 +3042,9 @@
                     </td>
                 
                     <td>
-                        0xef
                         
-                        <br/>
+                        <!-- 0xef
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -2986,9 +3058,9 @@
                     <td>0xf-</td>
                 
                     <td>
-                        0xf0
                         
-                        <br/>
+                        <!-- 0xf0
+                        <br/-->
                         
                             <a href="ldh.html">
                                 ldh 
@@ -2998,9 +3070,9 @@
                     </td>
                 
                     <td>
-                        0xf1
                         
-                        <br/>
+                        <!-- 0xf1
+                        <br/-->
                         
                             <a href="pop.html">
                                 pop 
@@ -3010,18 +3082,18 @@
                     </td>
                 
                     <td>
-                        0xf2
                         
-                        <br/>
+                        <!-- 0xf2
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xf3
                         
-                        <br/>
+                        <!-- 0xf3
+                        <br/-->
                         
                             <a href="di.html">
                                 di 
@@ -3031,18 +3103,18 @@
                     </td>
                 
                     <td>
-                        0xf4
                         
-                        <br/>
+                        <!-- 0xf4
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xf5
                         
-                        <br/>
+                        <!-- 0xf5
+                        <br/-->
                         
                             <a href="push.html">
                                 push 
@@ -3052,9 +3124,9 @@
                     </td>
                 
                     <td>
-                        0xf6
                         
-                        <br/>
+                        <!-- 0xf6
+                        <br/-->
                         
                             <a href="or.html">
                                 or 
@@ -3064,9 +3136,9 @@
                     </td>
                 
                     <td>
-                        0xf7
                         
-                        <br/>
+                        <!-- 0xf7
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -3076,9 +3148,9 @@
                     </td>
                 
                     <td>
-                        0xf8
                         
-                        <br/>
+                        <!-- 0xf8
+                        <br/-->
                         
                             <a href="ldhl.html">
                                 ldhl 
@@ -3088,9 +3160,9 @@
                     </td>
                 
                     <td>
-                        0xf9
                         
-                        <br/>
+                        <!-- 0xf9
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -3100,9 +3172,9 @@
                     </td>
                 
                     <td>
-                        0xfa
                         
-                        <br/>
+                        <!-- 0xfa
+                        <br/-->
                         
                             <a href="ld.html">
                                 ld 
@@ -3112,9 +3184,9 @@
                     </td>
                 
                     <td>
-                        0xfb
                         
-                        <br/>
+                        <!-- 0xfb
+                        <br/-->
                         
                             <a href="ei.html">
                                 ei 
@@ -3124,27 +3196,27 @@
                     </td>
                 
                     <td>
-                        0xfc
                         
-                        <br/>
-                        
-                            -
-                        
-                    </td>
-                
-                    <td>
-                        0xfd
-                        
-                        <br/>
+                        <!-- 0xfc
+                        <br/-->
                         
                             -
                         
                     </td>
                 
                     <td>
-                        0xfe
                         
-                        <br/>
+                        <!-- 0xfd
+                        <br/-->
+                        
+                            -
+                        
+                    </td>
+                
+                    <td>
+                        
+                        <!-- 0xfe
+                        <br/-->
                         
                             <a href="cp.html">
                                 cp 
@@ -3154,9 +3226,9 @@
                     </td>
                 
                     <td>
-                        0xff
                         
-                        <br/>
+                        <!-- 0xff
+                        <br/-->
                         
                             <a href="rst.html">
                                 rst 
@@ -3167,9 +3239,9 @@
                 
             
         </tbody>
-        <tfoot>
-        </tfoot>
+        <tfoot></tfoot>
     </table>
+    <a href="opcodes-list.html">View as a list</a>
 </div>
 
             </div>

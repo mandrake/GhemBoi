@@ -1,24 +1,29 @@
 {% extends "base.html" %}
+
+{% block header %}
+    GhemBoi documentation - opcode table
+{% endblock %}
+
 {% block body %}
 <div id="opcodes">
+    <a href="opcodes-list.html">View as a list</a>
     <table id="opcodes-table">
-        <thead>
+        <thead></thead>
+        <tbody>
             <tr>
                 <td></td>
                 {% for i in range(0, 16) %}
                     <td>0x{{ prefix }}-{{ "%x" % i }}</td>
                 {% endfor %}
             </tr>
-        </thead>
-        <tbody>
             {% for i in range(0, 16) %}
                 <tr>
                     <td>0x{{ prefix }}{{ "%x" % i }}-</td>
                 {% for j in range(0, 16) %}
                     <td>
-                        0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }}
                         {% set idx = "%X%X" % (i, j) %}
-                        <br/>
+                        <!-- 0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }}
+                        <br/-->
                         {% if opcodes.has_key(idx) %}
                             <a href="{{ opcodes[idx]['op']}}.html">
                                 {{ opcodes[idx]['op'] }} 
@@ -31,8 +36,8 @@
                 {% endfor %}
             {% endfor %}
         </tbody>
-        <tfoot>
-        </tfoot>
+        <tfoot></tfoot>
     </table>
+    <a href="opcodes-list.html">View as a list</a>
 </div>
 {% endblock %}

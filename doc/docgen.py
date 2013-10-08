@@ -20,3 +20,8 @@ t = env.get_template('opcodes-list.html')
 f = open('opcodes-list.html', 'w')
 f.write(t.render(prefix = '', opcodes = j))
 f.close()
+
+t = env.get_template('instructions/nop.html')
+f = open('nop.html', 'w')
+f.write(t.render())
+f.close()
