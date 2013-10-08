@@ -1,104 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style type="text/css">
-            #opcodes-table,
-            #opcodes-table tr,
-            #opcodes-table td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-
-            #opcodes-table {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border-top: 1px dotted #ccc;
-                border-bottom: : 1px dotted #ccc;
-            }
-
-            #opcodes-table td {
-                font-family: monospace;
-                width: 80px;
-                height: 60px;
-                text-align: center;
-            }
-
-            #opcodes {
-                text-align: center;
-            }
-
-            #opcodes-list {
-                text-align: left;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                border-top: 1px dotted #ccc;
-                border-bottom: 1px dotted #ccc;
-            }
-
-            #opcodes-list li {
-                font-family: monospace;
-            }
-
-            #content {
-                max-width: 900px;
-                margin: auto;
-                box-shadow: 0px 0px 15px #888888;
-            }
-
-            #header {
-                height: 120px;
-                background: #dde;
-                line-height: 120px;
-                font-size: 36px;
-                text-align: center;
-                background-image: url('./gameboy_.png');
-                background-repeat: no-repeat;
-                background-position: 40px 10px;
-            }
-
-            #body {
-                padding: 35px;
-            }
-
-            code {
-                border: 1px dotted #ccc;
-            }
-
-            pre {
-                padding: 0;
-                margin: 0;
-            }
-
-            .title {
-                margin: 0;
-                padding: 0;
-                font-size: 15px;
-            }
-
-            .bigtitle {
-                margin: 0;
-                margin-top: 50px;
-                margin-bottom: 20px;
-                padding: 0;
-                padding-bottom: 10px;
-                font-size: 40px;
-                border-bottom: 1px solid #ddd;
-            }
-        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"-->
+        <link href="./style.css" rel="stylesheet">
         {% block styles %}
         {% endblock %}
         {% block scripts %}
         {% endblock %}
     </head>
     <body>
-        <div id="content">
-            <div id="header">
-                {% block header %}
-                {% endblock %}
+        <div id="breadcrumbs"><div style="padding-left: 25px">{% block breadcrumbs %}{% endblock %}</div></div>
+        <div id="wrapper">
+            <div id="sidebar">
+                <div style="padding-left: 25px; padding-top: 30px">
+                    <ul style="margin: 0; padding: 0; list-style: none;">
+                        <li>asdfasdf</li>
+                        <li>asdfasdf</li>
+                        <li>asdfasdf</li>
+                        <li>asdfasdf</li>
+                        <li>asdfasdf</li>
+                    </ul>
+                </div>
             </div>
-            <div id="body">
-                {% block body %}
-                {% endblock %}
+            <div id="content">
+                <div id="header">
+                    {% block header %}
+                    {% endblock %}
+                </div>
+                <div id="body">
+                    {% block body %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </body>

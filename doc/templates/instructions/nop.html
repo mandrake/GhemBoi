@@ -3,8 +3,19 @@
 {% set instr_cycles = "4" %}
 {% extends "instruction.html" %}
 
+{% block breadcrumbs %}
+<a href="index.html">GhemBoi</a> » 
+<a href="opcodes-table.html">Instructions table</a> » 
+<a href="#">NOP instruction</a> » 
+{% endblock %}
+
+{% block header %}
+NOP instruction
+{% endblock %}
+
 {% block syntax %}
 nop
+
 {% endblock %}
 
 {% block c_snippet %}

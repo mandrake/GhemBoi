@@ -4,29 +4,61 @@
     GhemBoi documentation - opcode table
 {% endblock %}
 
+{% block breadcrumbs %}
+<a href="index.html">GhemBoi</a> » 
+<a href="#">Instructions table</a> » 
+{% endblock %}
+
 {% block body %}
 <div id="opcodes">
     <a href="opcodes-list.html">View as a list</a>
-    <table id="opcodes-table">
+    <div style="width: 100%; height: 20px; border-bottom: 1px dotted #ccc"></div>
+    <table id="opcodes-table" style="border-top: 1px dotted #ccc;">
         <thead></thead>
         <tbody>
             <tr>
-                <td></td>
-                {% for i in range(0, 16) %}
-                    <td>0x{{ prefix }}-{{ "%x" % i }}</td>
+                <td class="head"></td>
+                {% for i in range(0, 8  ) %}
+                    <td class="head">0x{{ prefix }}-{{ "%x" % i }}</td>
                 {% endfor %}
             </tr>
             {% for i in range(0, 16) %}
                 <tr>
                     <td>0x{{ prefix }}{{ "%x" % i }}-</td>
-                {% for j in range(0, 16) %}
+                {% for j in range(0, 8) %}
                     <td>
                         {% set idx = "%X%X" % (i, j) %}
                         <!-- 0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }}
                         <br/-->
                         {% if opcodes.has_key(idx) %}
                             <a href="{{ opcodes[idx]['op']}}.html">
-                                {{ opcodes[idx]['op'] }} 
+                                {{ opcodes[idx]['op'] }}<br/>
+                                {{ ', '.join(opcodes[idx]['operands']) }}
+                            </a>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            {% endfor %}
+
+            <tr>
+                <td class="head"></td>
+                {% for i in range(8, 16) %}
+                    <td class="head">0x{{ prefix }}-{{ "%x" % i }}</td>
+                {% endfor %}
+            </tr>
+            {% for i in range(0, 16) %}
+                <tr>
+                    <td>0x{{ prefix }}{{ "%x" % i }}-</td>
+                {% for j in range(8, 16) %}
+                    <td>
+                        {% set idx = "%X%X" % (i, j) %}
+                        <!-- 0x{{ prefix }}{{ "%x" % i }}{{ "%x" % j }}
+                        <br/-->
+                        {% if opcodes.has_key(idx) %}
+                            <a href="{{ opcodes[idx]['op']}}.html">
+                                {{ opcodes[idx]['op'] }}<br/>
                                 {{ ', '.join(opcodes[idx]['operands']) }}
                             </a>
                         {% else %}
@@ -38,6 +70,7 @@
         </tbody>
         <tfoot></tfoot>
     </table>
+    <div style="width: 100%; height: 20px; border-bottom: 1px dotted #ccc"></div>
     <a href="opcodes-list.html">View as a list</a>
 </div>
 {% endblock %}

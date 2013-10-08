@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block styles %}
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+<!--link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"-->
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
 {% endblock %}
 
 {% block scripts %}
@@ -17,27 +18,22 @@
 {% endblock %}
 
 {% block body %}
-    Instruction {{ instr_name }}<br/>
     Size (bytes): {{ instr_size }}<br/>
     Clock cycles: {{ instr_cycles }}
     <div id="syntax">
-        <div class="bigtitle">Syntax</div>
-            {% block syntax %}
-            {% endblock %}
-        </div>
-        <div class="bigtitle">Code snippets</div>
+        <h2>Syntax</h2>
+        <pre>
+            <code class="asm">{% block syntax %}{% endblock %}</code>
+        </pre>
+        <h2>Code snippets</h2>
         <div id="code-C" class="c">
-            <div class="title">
-                C
-            </div>
+            <h3>C</h3>
             <pre>
                 <code>{% block c_snippet %}{% endblock %}</code>
             </pre>
         </div>
         <div id="code-PY">
-            <div class="title">
-                python
-            </div>
+            <h3>Python</h3>
             <pre>
                 <code class="python">{% block py_snippet %}{% endblock %}</code>
             </pre>
